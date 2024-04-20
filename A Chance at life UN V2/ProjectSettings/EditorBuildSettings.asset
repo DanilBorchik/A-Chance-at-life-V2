@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Papka_Danila/Scene/SceneMenu.unity
+    guid: 69aee792dba38d849a8961db32a51330
+  - enabled: 1
+    path: Assets/Papka_Danila/Scene/YrovenRazrabotki1.unity
+    guid: 601715607c57c3941a2853d9ec4bd6f9
   m_configObjects: {}
