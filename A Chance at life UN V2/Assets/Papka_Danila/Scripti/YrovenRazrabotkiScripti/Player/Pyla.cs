@@ -24,7 +24,7 @@ public class Pyla : MonoBehaviour
         _gravi += graviti * Time.fixedDeltaTime;
         transform.position += Vector3.down * _gravi * Time.fixedDeltaTime;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         //_Popal(collision);
         DestroyFaerbol();

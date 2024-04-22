@@ -6,9 +6,7 @@ public class Strelba : MonoBehaviour
 {
     public Pyla PylaPrefab;
     public PeredvizhenieIgroka _PeredvizhenieIgroka;
-    float timer = 0f;
-    public float timerDlaPubliki = 0.8f;
-    public float CostManaF = 10;
+    public PlayerHealth _PlayerHealth;
 
     //public AudioSource Fireball;
 
@@ -21,18 +19,14 @@ public class Strelba : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         if (Input.GetMouseButtonDown(0))
         {
-            if (timer >= timerDlaPubliki)
-            {
-                //if (_PeredvizhenieIgroka._mana >= CostManaF)
-                //{
+                if (_PlayerHealth._Patroni > 0)
+                {
                     Instantiate(PylaPrefab, transform.position, transform.rotation);
-                    timer = 0;
+                    _PlayerHealth.DealMinysPatroni(1);
                     //Fireball.Play();
-                //}
-            }
+                }
         }
     }
 }
