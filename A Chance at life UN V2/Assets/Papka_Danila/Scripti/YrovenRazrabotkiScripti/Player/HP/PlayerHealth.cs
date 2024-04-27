@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //public float _hp = 100;
+    public float _hp = 100;
     public float _ScocPatron;
     public float _Patroni;
-    //public RectTransform _hpRectTransform;
-    public RectTransform _ManaRectTransform;
+    public RectTransform _hpRectTransform;
+    public RectTransform _PatroniRectTransform;
 
     //public GameObject gameplayUI;
     //public GameObject gameOverScren;
@@ -17,50 +17,55 @@ public class PlayerHealth : MonoBehaviour
     //public AudioSource HitSound;
     //public AudioSource DeadSound;
 
-    //private float _maxhp;
+    private float _maxhp;
     //public bool _OnYmer = false;
 
     private void Start()
     {
-        //_maxhp = _hp;
-        _Patroni = _ScocPatron;
-        DrawHealthBar();
-    }
-    void Update()
-    {
-        regenmani();
+        MaxChegoto();
     }
 
-    private void regenmani()
+    private void MaxChegoto()
+    {
+        _maxhp = _hp;
+        _Patroni = _ScocPatron;
+    }
+
+    void Update()
+    {
+        Perezoradka();
+    }
+
+    private void Perezoradka()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
             _Patroni = _ScocPatron;
-            DrawManaBar();
+            DrawPatroniBar();
         }
     }
 
     public void DealDamage(float damage)
     {
-        //_hp -= damage;
-        //if (_hp <= 0)
-        //{
+        _hp -= damage;
+        if (_hp <= 0)
+        {
             //if (_OnYmer != true)
             //{
-                //ded();
+                ded();
                 //_animator.SetBool("Death", true);
             //}
-        //}
+        }
         //if (_OnYmer != true)
         //{
             //HitSound.Play();
         //}
-        //DrawHealthBar();
+        DrawHealthBar();
     }
     public void DealMinysPatroni(float minys)
     {
         _Patroni -= minys;
-        DrawManaBar();
+        DrawPatroniBar();
     }
     private void ded()
     {
@@ -75,11 +80,11 @@ public class PlayerHealth : MonoBehaviour
     }
     private void DrawHealthBar()
     {
-        //_hpRectTransform.anchorMax = new Vector2(_hp / _maxhp, 1);
+        _hpRectTransform.anchorMax = new Vector2(_hp / _maxhp, 1);
     }
-    private void DrawManaBar()
+    private void DrawPatroniBar()
     {
-        _ManaRectTransform.anchorMax = new Vector2(_Patroni / _ScocPatron, 1);
+        _PatroniRectTransform.anchorMax = new Vector2(_Patroni / _ScocPatron, 1);
     }
     public void HpRegen(float _hpregen)
     {
