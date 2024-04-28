@@ -94,4 +94,11 @@ public class PlayerHealth : MonoBehaviour
         //}
         //DrawHealthBar();
     }
+
+    public void AddHealth(float amount)
+    {
+        _hp += amount;
+        _hp = Mathf.Clamp(_hp, 0, _maxhp);
+        DrawHealthBar();
+    }
 }
