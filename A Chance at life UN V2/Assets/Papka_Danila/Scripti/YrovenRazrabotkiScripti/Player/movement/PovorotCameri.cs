@@ -13,10 +13,10 @@ public class PovorotCameri : MonoBehaviour
 
     void Update()
     {
-        float newAngleY = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * RotationSpead;
+        float newAngleY = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * RotationSpead * Time.deltaTime;
         transform.localEulerAngles = new Vector3(0, newAngleY, 0);
 
-        float newAngleX = CameraAxisTransform.localEulerAngles.x - Input.GetAxis("Mouse Y") * RotationSpead;
+        float newAngleX = CameraAxisTransform.localEulerAngles.x - Input.GetAxis("Mouse Y") * RotationSpead * Time.deltaTime;
         if (newAngleX > 180)
         {
             newAngleX -= 360;

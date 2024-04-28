@@ -243,6 +243,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7043899494281913467}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &778839459 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1566458710835756708, guid: 460aed7093b7d40438ba61511ac751f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117859595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &778839463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778839459}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccdc8120f49f82e4a9dde3265cad696e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wishDistance: 2.6
+  CameraAxisTransform: {fileID: 1312179389}
 --- !u!95 &992952669 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 1508704902413411538, guid: 460aed7093b7d40438ba61511ac751f6,
@@ -254,6 +274,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4742880337481392395, guid: 0fc363500ad5a754c83c99b3d2575b77,
     type: 3}
   m_PrefabInstance: {fileID: 7043899494281913467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1312179389 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1566458710280162314, guid: 460aed7093b7d40438ba61511ac751f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 2117859595}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1438938696 stripped
 Transform:
@@ -762,6 +788,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566458710280162314, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566458710835756729, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2327840386104223704, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: RotationSpead
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 6577132259098998495, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
