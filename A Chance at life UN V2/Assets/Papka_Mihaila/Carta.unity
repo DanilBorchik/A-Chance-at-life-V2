@@ -386,6 +386,16 @@ PrefabInstance:
       propertyPath: RotationSpead
       value: 400
       objectReference: {fileID: 0}
+    - target: {fileID: 4240473124702811400, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483924664322572986, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6577132259098998495, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
       propertyPath: m_LocalPosition.z
