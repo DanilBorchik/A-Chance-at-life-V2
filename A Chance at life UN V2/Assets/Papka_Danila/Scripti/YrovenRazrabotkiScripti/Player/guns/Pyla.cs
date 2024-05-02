@@ -12,7 +12,7 @@ public class Pyla : MonoBehaviour
     private float _gravi = 0;
     void Start()
     {
-        Invoke("DestroyFaerbol", lifetime);
+        Invoke("DestroyPyly", lifetime);
     }
     void FixedUpdate()
     {
@@ -26,22 +26,21 @@ public class Pyla : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        //_Popal(collision);
-        DestroyFaerbol();
+        _Popal(other);
+        DestroyPyly();
     }
-    //private void _Popal(Collision collision)
-    //{
-        //{
-            //var enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
-            //if (enemyHealth != null)
-           // {
-               // enemyHealth.DealDamage(damage);
-            //}
-        //}
-    //}
-    private void DestroyFaerbol()
+    private void _Popal(Collider other)
+    {
+        {
+            var enemyHealth = other.gameObject.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+               enemyHealth.DealDamage(damage);
+            }
+        }
+    }
+    private void DestroyPyly()
     {
         Destroy(gameObject);
-        Debug.Log(1);
     }
 }

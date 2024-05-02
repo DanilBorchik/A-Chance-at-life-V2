@@ -10,7 +10,7 @@ public class EnemyAIv2 : MonoBehaviour
     private NavMeshAgent _navMeshAgent;
     public PlayerHealth _playerHealth;
 
-    public bool _isPlayerNoticed;
+    private bool _isPlayerNoticed;
 
     public float viewAngle;
     public float timerDlaPublici;
