@@ -9,6 +9,7 @@ public class EnemyAIv2 : MonoBehaviour
     public PeredvizhenieIgroka player;
     private NavMeshAgent _navMeshAgent;
     public PlayerHealth _playerHealth;
+    public Animator _AnimationZombi;
 
     private bool _isPlayerNoticed;
 
@@ -30,6 +31,18 @@ public class EnemyAIv2 : MonoBehaviour
         PatrolUpdate();
         ChaseUpdate();
         AtackUpdate();
+        if(_navMeshAgent.velocity.sqrMagnitude >= 0.1)
+        {
+            _AnimationZombi.SetInteger("Dvizenie", 2);
+        }
+        else
+        {
+            _AnimationZombi.SetInteger("Dvizenie", 1);
+        }
+        if(_isPlayerNoticed == true)
+        {
+            _AnimationZombi.SetInteger("Dvizenie", 3);
+        }
     }
     private void NoticePlayerUpdate()
     {

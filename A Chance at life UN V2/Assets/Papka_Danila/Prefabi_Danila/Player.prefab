@@ -80,6 +80,7 @@ GameObject:
   - component: {fileID: 2065301675419796062}
   - component: {fileID: 4874248945297727947}
   - component: {fileID: 7849774895508680697}
+  - component: {fileID: 2442866494803036452}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -188,6 +189,19 @@ MonoBehaviour:
   _pausePanel: {fileID: 4240473124702811400}
   _Strelba: {fileID: 9097627580745876924}
   _PovorotCameri: {fileID: 2327840386104223704}
+--- !u!114 &2442866494803036452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566458709720671682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b09f44e5073e24e9536afa849d7491, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColvoShin: 0
 --- !u!1 &1566458710280162315
 GameObject:
   m_ObjectHideFlags: 0
