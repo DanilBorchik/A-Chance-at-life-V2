@@ -20,6 +20,7 @@ public class EnemyAIv2 : MonoBehaviour
 
     private float timer;
     private float timerPatryl;
+    private bool attaka;
 
     private void Start()
     {
@@ -31,7 +32,24 @@ public class EnemyAIv2 : MonoBehaviour
         PatrolUpdate();
         ChaseUpdate();
         AtackUpdate();
-        if(_navMeshAgent.velocity.sqrMagnitude >= 0.1)
+        AnimaciaDvizhenia();
+        if(attaka == true)
+        {
+            _AnimationZombi.SetInteger("Attack", 1);
+            _AnimationZombi.SetBool("BoolAttack", true);
+            _navMeshAgent.speed = 0;
+        }
+        else
+        {
+            _AnimationZombi.SetInteger("Attack", 0);
+            _AnimationZombi.SetBool("BoolAttack", false);
+            _navMeshAgent.speed = 3.5f;
+        }
+    }
+
+    private void AnimaciaDvizhenia()
+    {
+        if (_navMeshAgent.velocity.sqrMagnitude >= 0.1)
         {
             _AnimationZombi.SetInteger("Dvizenie", 2);
         }
@@ -39,11 +57,8 @@ public class EnemyAIv2 : MonoBehaviour
         {
             _AnimationZombi.SetInteger("Dvizenie", 1);
         }
-        if(_isPlayerNoticed == true)
-        {
-            _AnimationZombi.SetInteger("Dvizenie", 3);
-        }
     }
+
     private void NoticePlayerUpdate()
     {
         var direction = player.transform.position - transform.position;
@@ -95,14 +110,20 @@ public class EnemyAIv2 : MonoBehaviour
     {
         if (_isPlayerNoticed)
         {
-            if (DistanciaIgroka() < 2.5)
+            if (DistanciaIgroka() < 2f)
             {
                 timer += Time.deltaTime;
+                attaka = true;
                 if (timer >= timerDlaPublici)
                 {
                     _playerHealth.DealDamage(damage);
                     timer = 0f;
                 }
+            }
+            else
+            {
+                attaka = false;
+                timer = 0;
             }
             float DistanciaIgroka()
             {
