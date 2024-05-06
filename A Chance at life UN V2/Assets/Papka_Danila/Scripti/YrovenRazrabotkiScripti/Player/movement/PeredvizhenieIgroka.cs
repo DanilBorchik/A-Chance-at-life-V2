@@ -10,7 +10,7 @@ public class PeredvizhenieIgroka : MonoBehaviour
 
     private Vector3 _moveVector;
     private float _fallVelocity = 0;
-    private int NomerAnimacii;
+    public int NomerAnimacii;
     private bool Prigok;
     private float timerPrigok;
 
@@ -52,12 +52,12 @@ public class PeredvizhenieIgroka : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             _moveVector += transform.right;
-            NomerAnimacii = 2;
+            NomerAnimacii = 5;
         }
         if (Input.GetKey(KeyCode.A))
         {
             _moveVector -= transform.right;
-            NomerAnimacii = 2;
+            NomerAnimacii = 4;
         }
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
