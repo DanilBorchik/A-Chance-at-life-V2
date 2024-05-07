@@ -138,6 +138,7 @@ MonoBehaviour:
   Gravity: 9.8
   JumpForce: 5
   Speed: 5
+  NomerAnimacii: 0
   _animator: {fileID: 1508704902413411538}
 --- !u!143 &2065301675419796062
 CharacterController:
@@ -260,7 +261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1566458710835756708}
   m_LocalRotation: {x: 0.13052616, y: -0, z: -0, w: 0.9914449}
-  m_LocalPosition: {x: 0.3, y: 0.5, z: -2.6}
+  m_LocalPosition: {x: 0.3, y: 0.8, z: -2.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1566458710280162314}
