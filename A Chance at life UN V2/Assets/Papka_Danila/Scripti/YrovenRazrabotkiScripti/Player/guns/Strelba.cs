@@ -10,7 +10,8 @@ public class Strelba : MonoBehaviour
     public Animator _animator;
 
     private int NomerAnimaciiStrelbi;
-    private bool Strelbi;
+    public bool Strelbi;
+    private bool AnimationStrelbi;
     private float timerStrelbi;
     //public AudioSource Fireball;
 
@@ -25,27 +26,32 @@ public class Strelba : MonoBehaviour
     {
         ypravlenieAnimaciamiStrelbi();
         VistrelPistoleta();
-        //if(Strelbi == true)
-        //{
-            //timerStrelbi += Time.deltaTime;
-            //if(timerStrelbi > 8f)
-            //{
-                //Strelbi = false;
-            //}
-        //}
+        if(Strelbi == true)
+        {
+            timerStrelbi += Time.deltaTime;
+            if(timerStrelbi > 5f)
+            {
+                Strelbi = false;
+            }
+        }
     }
 
     private void ypravlenieAnimaciamiStrelbi()
     {
         _animator.SetInteger("Shooting", NomerAnimaciiStrelbi);
+        if (AnimationStrelbi == false)
+        {
+            _animator.SetBool("ShootingBool", false);
+        }
     }
 
     private void VistrelPistoleta()
     {
-        //if(Strelbi == false)
-        //{
+        AnimationStrelbi = false;
+        if(Strelbi == false)
+        {
             NomerAnimaciiStrelbi = 0;
-        //}
+        }
         if (Input.GetMouseButtonDown(0))
         {
             if (_PlayerHealth._Patroni > 0)
@@ -53,9 +59,16 @@ public class Strelba : MonoBehaviour
                 Instantiate(PylaPrefab, transform.position, transform.rotation);
                 _PlayerHealth.DealMinysPatroni(1);
                 NomerAnimaciiStrelbi = 1;
-                //Strelbi = true;
-                //timerStrelbi = 0;
+                Strelbi = true;
+                timerStrelbi = 0;
+                AnimationStrelbi = true;
+                _animator.SetBool("ShootingBool", true);
             }
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            Strelbi = false;
+            timerStrelbi = 0;
         }
     }
 }

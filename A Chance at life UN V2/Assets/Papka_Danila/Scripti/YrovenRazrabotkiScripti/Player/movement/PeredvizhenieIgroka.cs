@@ -16,6 +16,7 @@ public class PeredvizhenieIgroka : MonoBehaviour
 
     private CharacterController _characterController;
     public Animator _animator;
+    public Strelba _strelba;
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -61,16 +62,21 @@ public class PeredvizhenieIgroka : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space) && _characterController.isGrounded)
         {
-            Prigok = true;
-            _animator.SetBool("Jump", true);
+            if(_strelba.Strelbi == false)
+            {
+                Prigok = true;
+                _animator.SetBool("Jump", true);
+            }
         }
         if (Prigok == true)
         {
             timerPrigok += Time.deltaTime;
+            _characterController.height = 1.4f;
             if (timerPrigok > 0.7f)
             {
                 _fallVelocity = -JumpForce;
                 timerPrigok = 0;
+                _characterController.height = 2f;
                 Prigok = false;
             }
         }

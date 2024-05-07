@@ -6,16 +6,6 @@ public class EnemyHealth : MonoBehaviour
 {
     public float _hp = 100;
     
-    void Start()
-    {
-        
-    }
-
-   
-    void Update()
-    {
-        
-    }
     public void DealDamage(float damage)
     {
         _hp -= damage;
@@ -23,5 +13,6 @@ public class EnemyHealth : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        GetComponent<EnemyAIv2>().viewAngle = 360;
     }
 }

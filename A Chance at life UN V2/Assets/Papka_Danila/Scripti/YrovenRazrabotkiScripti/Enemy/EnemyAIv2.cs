@@ -17,6 +17,8 @@ public class EnemyAIv2 : MonoBehaviour
     public float timerDlaPublici;
     public float timerPatrylDlaPublici;
     public float damage;
+    public float spead;
+    public bool NugnoPatrylirovanie;
 
     private float timer;
     private float timerPatryl;
@@ -29,11 +31,19 @@ public class EnemyAIv2 : MonoBehaviour
     private void Update()
     {
         NoticePlayerUpdate();
-        PatrolUpdate();
+        if (NugnoPatrylirovanie == true)
+        {
+            PatrolUpdate();
+        }
         ChaseUpdate();
         AtackUpdate();
         AnimaciaDvizhenia();
-        if(attaka == true)
+        AnimaciaAtacki();
+    }
+
+    private void AnimaciaAtacki()
+    {
+        if (attaka == true)
         {
             _AnimationZombi.SetInteger("Attack", 1);
             _AnimationZombi.SetBool("BoolAttack", true);
@@ -43,7 +53,7 @@ public class EnemyAIv2 : MonoBehaviour
         {
             _AnimationZombi.SetInteger("Attack", 0);
             _AnimationZombi.SetBool("BoolAttack", false);
-            _navMeshAgent.speed = 3.5f;
+            _navMeshAgent.speed = spead;
         }
     }
 
@@ -74,7 +84,10 @@ public class EnemyAIv2 : MonoBehaviour
                 }
             }
         }
-        PatrolUpdate();
+        if (NugnoPatrylirovanie == true)
+        {
+            PatrolUpdate();
+        }
     }
     private void ChaseUpdate()
     {
@@ -129,6 +142,11 @@ public class EnemyAIv2 : MonoBehaviour
             {
                 return Vector3.Distance(transform.position, _playerHealth.transform.position);
             }
+        }
+        else
+        {
+            attaka = false;
+            timer = 0;
         }
     }
 }

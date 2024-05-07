@@ -140,6 +140,7 @@ MonoBehaviour:
   Speed: 5
   NomerAnimacii: 0
   _animator: {fileID: 1508704902413411538}
+  _strelba: {fileID: 9097627580745876924}
 --- !u!143 &2065301675419796062
 CharacterController:
   m_ObjectHideFlags: 0
@@ -397,6 +398,7 @@ MonoBehaviour:
   _PeredvizhenieIgroka: {fileID: 8289962147778712277}
   _PlayerHealth: {fileID: 4874248945297727947}
   _animator: {fileID: 1508704902413411538}
+  Strelbi: 0
 --- !u!1 &8044745863319946880
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,11 +503,23 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1654241952016386, guid: 948bbd331c306c945ba7d4f6d7d76d61, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1834572944770430, guid: 948bbd331c306c945ba7d4f6d7d76d61, type: 3}
       propertyPath: m_Name
       value: Character_SportyMale_01
       objectReference: {fileID: 0}
     - target: {fileID: 1841548466307418, guid: 948bbd331c306c945ba7d4f6d7d76d61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898094267587394, guid: 948bbd331c306c945ba7d4f6d7d76d61, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905303938246616, guid: 948bbd331c306c945ba7d4f6d7d76d61, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
