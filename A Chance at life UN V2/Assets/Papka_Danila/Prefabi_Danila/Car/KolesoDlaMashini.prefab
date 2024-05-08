@@ -202,10 +202,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 809bb634ec63f7b4885e5808c6774ac0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventar: {fileID: 0}
   _UIVzaimodeistvia: {fileID: 1639383375970800954}
   _UIVzaimodeistviaFalse: {fileID: 5035256550114346307}
-  _Shina: {fileID: 498082445054215338}
+  TypeObject: 1
+  _Object: {fileID: 498082445054215338}
 --- !u!1001 &4193278016050305263
 PrefabInstance:
   m_ObjectHideFlags: 0

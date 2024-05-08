@@ -11,6 +11,8 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("tyrebool1", 0);
         PlayerPrefs.SetInt("tyrebool2", 0);
         PlayerPrefs.SetInt("tyrebool3", 0);
+        PlayerPrefs.SetInt("ColvoKanistr", 0);
+        PlayerPrefs.SetInt("ColvoShin", 0);
         SceneManager.LoadScene(1);
     }
 }

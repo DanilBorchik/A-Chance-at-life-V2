@@ -13,6 +13,7 @@ public class Strelba : MonoBehaviour
     public bool Strelbi;
     private bool AnimationStrelbi;
     private float timerStrelbi;
+    private float timerStrelbi1;
     //public AudioSource Fireball;
 
     // Start is called before the first frame update
@@ -32,6 +33,7 @@ public class Strelba : MonoBehaviour
             if(timerStrelbi > 5f)
             {
                 Strelbi = false;
+                timerStrelbi = 0;
             }
         }
     }
@@ -41,7 +43,12 @@ public class Strelba : MonoBehaviour
         _animator.SetInteger("Shooting", NomerAnimaciiStrelbi);
         if (AnimationStrelbi == false)
         {
-            _animator.SetBool("ShootingBool", false);
+            timerStrelbi1 += Time.deltaTime;
+            if (timerStrelbi1 >= 0.5f)
+            {
+                _animator.SetBool("ShootingBool", false);
+                timerStrelbi1 = 0;
+            }
         }
     }
 

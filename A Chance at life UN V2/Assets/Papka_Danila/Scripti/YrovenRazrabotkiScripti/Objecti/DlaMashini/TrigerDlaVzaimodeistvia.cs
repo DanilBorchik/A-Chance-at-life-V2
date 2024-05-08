@@ -9,6 +9,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     public Inventar inventar;
 
     private bool Ystanovleno;
+    private int ColvoShin;
 
     public int KakoyNamber;
 
@@ -33,6 +34,8 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
                     _Car.BusRecovery(KakoyNamber);
                     Ystanovleno = true;
                     inventar.ColvoShin -= 1;
+                    ColvoShin = inventar.ColvoShin;
+                    PlayerPrefs.SetInt("ColvoShin", ColvoShin);
                 }
             }
         }

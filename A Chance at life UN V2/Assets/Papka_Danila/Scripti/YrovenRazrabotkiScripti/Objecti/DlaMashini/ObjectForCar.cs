@@ -4,40 +4,72 @@ using UnityEngine;
 
 public class ObjectForCar : MonoBehaviour
 {
-    public Inventar inventar;
-
     public GameObject _UIVzaimodeistvia;
     public GameObject _UIVzaimodeistviaFalse;
 
-    public GameObject _Shina;
+    public int TypeObject;
+
+    private int ColvoShin;
+    private int ColvoKanistr;
+
+    public GameObject _Object;
 
     private void OnTriggerStay(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
+        var _Inventar = other.gameObject.GetComponent<Inventar>();
         if (_PeredvizhenieIgroka != null)
         {
-            if (inventar.ColvoShin == 0)
+            if (TypeObject == 1)
             {
-                _UIVzaimodeistvia.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
+                if (_Inventar.ColvoShin == 0)
                 {
-                    inventar.ColvoShin += 1;
-                    Destroy(_Shina);
+                    _UIVzaimodeistvia.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.F))
+                    {
+                        _Inventar.ColvoShin += 1;
+                        ColvoShin = _Inventar.ColvoShin;
+                        PlayerPrefs.SetInt("ColvoShin", ColvoShin);
+                        Destroy(_Object);
+                    }
+                }
+                else
+                {
+                    _UIVzaimodeistviaFalse.SetActive(true);
                 }
             }
-            else
+            if (TypeObject == 2)
             {
-                _UIVzaimodeistviaFalse.SetActive(true);
+                if (_Inventar.ColvoKanistr == 0)
+                {
+                    _UIVzaimodeistvia.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.F))
+                    {
+                        _Inventar.ColvoKanistr += 1;
+                        ColvoKanistr = _Inventar.ColvoKanistr;
+                        PlayerPrefs.SetInt("ColvoKanistr", ColvoKanistr);
+                        Destroy(_Object);
+                    }
+                }
+
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
-
+        var _InventarIgroka = other.gameObject.GetComponent<Inventar>();
         if (_PeredvizhenieIgroka != null)
         {
-            if (inventar.ColvoShin == 0)
+            if (_InventarIgroka.ColvoShin == 0)
+            {
+                _UIVzaimodeistvia.SetActive(false);
+            }
+            else
+            {
+                _UIVzaimodeistviaFalse.SetActive(false);
+            }
+            if (_InventarIgroka.ColvoKanistr == 0)
             {
                 _UIVzaimodeistvia.SetActive(false);
             }

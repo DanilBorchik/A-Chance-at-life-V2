@@ -10,12 +10,9 @@ public class StartGame : MonoBehaviour
     private int _tyrebool1 = 0;
     private int _tyrebool2 = 0;
     private int _tyrebool3 = 0;
-    public void StartGameButton()
+
+    private void Start()
     {
-        if (EstProgress == true)
-        {
-            SceneManager.LoadScene(1);
-        }
         _tyrebool = PlayerPrefs.GetInt("tyrebool", _tyrebool);
         _tyrebool1 = PlayerPrefs.GetInt("tyrebool1", _tyrebool1);
         _tyrebool2 = PlayerPrefs.GetInt("tyrebool2", _tyrebool2);
@@ -35,6 +32,13 @@ public class StartGame : MonoBehaviour
         if (_tyrebool3 == 1)
         {
             EstProgress = true;
+        }
+    }
+    public void StartGameButton()
+    {
+        if (EstProgress == true)
+        {
+            SceneManager.LoadScene(1);
         }
     }
 }
