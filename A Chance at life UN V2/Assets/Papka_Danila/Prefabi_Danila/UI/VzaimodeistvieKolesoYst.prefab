@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 1975385543093532217}
   - component: {fileID: 1031983249603316048}
   m_Layer: 5
-  m_Name: Vzaimodeistvie 1
+  m_Name: VzaimodeistvieKolesoYst
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

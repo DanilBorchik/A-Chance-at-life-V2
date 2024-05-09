@@ -8,17 +8,12 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     public GameObject _UIVzaimodeistvia;
 
     private int ColvoShin;
-    private bool Ystanovleno;
 
     public int KakoyNamber;
+    public float ColvoToplivaMashini;
 
-    private void Update()
-    {
-        if (Ystanovleno == true)
-        {
-            _UIVzaimodeistvia.SetActive(false);
-        }
-    }
+    public int DlaChegoTriger;
+
 
     private void OnTriggerStay(Collider other)
     {
@@ -26,16 +21,32 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
         var _Inventar = other.gameObject.GetComponent<Inventar>();
         if (_PeredvizhenieIgroka != null)
         {
-            if (_Inventar.ColvoShin != 0)
+            if (DlaChegoTriger == 1)
             {
-                _UIVzaimodeistvia.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
+                if (_Inventar.ColvoShin != 0)
                 {
-                    _Car.BusRecovery(KakoyNamber);
-                    Ystanovleno = true;
-                    _Inventar.ColvoShin -= 1;
-                    ColvoShin = _Inventar.ColvoShin;
-                    PlayerPrefs.SetInt("ColvoShin", ColvoShin);
+                    _UIVzaimodeistvia.SetActive(true);
+                    if (Input.GetKeyDown(KeyCode.F))
+                    {
+                        _Car.BusRecovery(KakoyNamber);
+                        _Inventar.ColvoShin -= 1;
+                        ColvoShin = _Inventar.ColvoShin;
+                        PlayerPrefs.SetInt("ColvoShin", ColvoShin);
+                    }
+                }
+            }
+            if (DlaChegoTriger == 2)
+            {
+                if (_Inventar.ColvoKanistr != 0)
+                {
+                    if (Input.GetKey(KeyCode.F))
+                    {
+                        if (_Inventar.ColvoTopliva > 0.3)
+                        {
+                            _Inventar.ZapravkaMashini();
+                            ColvoToplivaMashini += 5f * Time.deltaTime;
+                        }
+                    }
                 }
             }
         }
@@ -44,9 +55,12 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
 
-        if (_PeredvizhenieIgroka != null)
+        if (DlaChegoTriger == 1)
         {
-            _UIVzaimodeistvia.SetActive(false);
+            if (_PeredvizhenieIgroka != null)
+            {
+                _UIVzaimodeistvia.SetActive(false);
+            }
         }
     }
 }

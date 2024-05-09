@@ -51,6 +51,10 @@ public class ObjectForCar : MonoBehaviour
                         Destroy(_Object);
                     }
                 }
+                else
+                {
+                    _UIVzaimodeistviaFalse.SetActive(true);
+                }
 
             }
         }

@@ -7,6 +7,8 @@ public class Car : MonoBehaviour
     public List<GameObject> tyre;
     public List<GameObject> tyreTriger;
 
+    public float ColvoToplivaMashini;
+
     private int _tyrebool = 0;
     private int _tyrebool1 = 0;
     private int _tyrebool2 = 0;
