@@ -6,10 +6,9 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
 {
     public Car _Car;
     public GameObject _UIVzaimodeistvia;
-    public Inventar inventar;
 
-    private bool Ystanovleno;
     private int ColvoShin;
+    private bool Ystanovleno;
 
     public int KakoyNamber;
 
@@ -24,17 +23,18 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     private void OnTriggerStay(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
+        var _Inventar = other.gameObject.GetComponent<Inventar>();
         if (_PeredvizhenieIgroka != null)
         {
-            if (inventar.ColvoShin != 0)
+            if (_Inventar.ColvoShin != 0)
             {
                 _UIVzaimodeistvia.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.F))
                 {
                     _Car.BusRecovery(KakoyNamber);
                     Ystanovleno = true;
-                    inventar.ColvoShin -= 1;
-                    ColvoShin = inventar.ColvoShin;
+                    _Inventar.ColvoShin -= 1;
+                    ColvoShin = _Inventar.ColvoShin;
                     PlayerPrefs.SetInt("ColvoShin", ColvoShin);
                 }
             }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Car : MonoBehaviour
 {
     public List<GameObject> tyre;
+    public List<GameObject> tyreTriger;
 
     private int _tyrebool = 0;
     private int _tyrebool1 = 0;
@@ -20,18 +21,22 @@ public class Car : MonoBehaviour
         if (_tyrebool == 1)
         {
             tyre[0].SetActive(true);
+            tyreTriger[0].SetActive(false);
         }
         if (_tyrebool1 == 1)
         {
             tyre[1].SetActive(true);
+            tyreTriger[1].SetActive(false);
         }
         if (_tyrebool2 == 1)
         {
             tyre[2].SetActive(true);
+            tyreTriger[2].SetActive(false);
         }
         if (_tyrebool3 == 1)
         {
             tyre[3].SetActive(true);
+            tyreTriger[3].SetActive(false);
         }
     }
     public void BusRecovery(int number)
@@ -44,6 +49,7 @@ public class Car : MonoBehaviour
             if (_tyrebool == 1)
             {
                 _numberTyre.SetActive(true);
+                tyreTriger[0].SetActive(false);
             }
         }
         if (number == 1)
@@ -53,6 +59,7 @@ public class Car : MonoBehaviour
             if (_tyrebool1 == 1)
             {
                 _numberTyre.SetActive(true);
+                tyreTriger[1].SetActive(false);
             }
         }
         if (number == 2)
@@ -62,6 +69,7 @@ public class Car : MonoBehaviour
             if (_tyrebool2 == 1)
             {
                 _numberTyre.SetActive(true);
+                tyreTriger[2].SetActive(false);
             }
         }
         if (number == 3)
@@ -71,6 +79,7 @@ public class Car : MonoBehaviour
             if (_tyrebool3 == 1)
             {
                 _numberTyre.SetActive(true);
+                tyreTriger[3].SetActive(false);
             }
         }
     }
