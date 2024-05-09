@@ -11,14 +11,17 @@ public class ZapravkaCanistri : MonoBehaviour
         var _Inventar = other.gameObject.GetComponent<Inventar>();
         if (_PeredvizhenieIgroka != null)
         {
-            if (Input.GetKey(KeyCode.F))
+            if (_Inventar.ColvoKanistr != 0)
             {
-                if (_Inventar.ColvoTopliva <= _Inventar.MaxTopliva)
+                if (Input.GetKey(KeyCode.F))
                 {
-                    if (ColvoTopliva > 0.3)
+                    if (_Inventar.ColvoTopliva <= _Inventar.MaxTopliva)
                     {
-                        _Inventar.Napolnenie(5);
-                        ColvoTopliva -= 5 * Time.deltaTime;
+                        if (ColvoTopliva > 0.3)
+                        {
+                            _Inventar.Napolnenie(5);
+                            ColvoTopliva -= 5 * Time.deltaTime;
+                        }
                     }
                 }
             }
