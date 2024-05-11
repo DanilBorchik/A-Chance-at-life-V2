@@ -25,6 +25,6 @@ public class Inventar : MonoBehaviour
     }
     public void ZapravkaMashini()
     {
-        ColvoTopliva -= 5 * Time.deltaTime;
+        ColvoTopliva -= 5f * Time.deltaTime;
     }
 }

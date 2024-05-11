@@ -44,7 +44,7 @@ public class Strelba : MonoBehaviour
         if (AnimationStrelbi == false)
         {
             timerStrelbi1 += Time.deltaTime;
-            if (timerStrelbi1 >= 0.5f)
+            if (timerStrelbi1 >= 0.3f)
             {
                 _animator.SetBool("ShootingBool", false);
                 timerStrelbi1 = 0;

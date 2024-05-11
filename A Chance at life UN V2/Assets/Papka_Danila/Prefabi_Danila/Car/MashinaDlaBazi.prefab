@@ -110,7 +110,8 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 6001524341686349176}
   KakoyNamber: 1
-  DlaChegoTriger: 0
+  ColvoToplivaMashini: 0
+  DlaChegoTriger: 1
 --- !u!1 &911745367
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +222,8 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 3381919043053957613}
   KakoyNamber: 3
-  DlaChegoTriger: 0
+  ColvoToplivaMashini: 0
+  DlaChegoTriger: 1
 --- !u!1 &1070430523
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +334,8 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 3646433131377338066}
   KakoyNamber: 0
-  DlaChegoTriger: 0
+  ColvoToplivaMashini: 0
+  DlaChegoTriger: 1
 --- !u!1 &1999674484
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +446,8 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 6196617135507372608}
   KakoyNamber: 2
-  DlaChegoTriger: 0
+  ColvoToplivaMashini: 0
+  DlaChegoTriger: 1
 --- !u!1 &2806631934104953354
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,6 +557,7 @@ MonoBehaviour:
   _Car: {fileID: 0}
   _UIVzaimodeistvia: {fileID: 0}
   KakoyNamber: 0
+  ColvoToplivaMashini: 0
   DlaChegoTriger: 2
 --- !u!114 &769254627
 MonoBehaviour:
@@ -576,6 +581,7 @@ MonoBehaviour:
   - {fileID: 383897393}
   - {fileID: 1999674484}
   - {fileID: 911745367}
+  ColvoToplivaMashini: 0
 --- !u!1001 &3039816983482181612
 PrefabInstance:
   m_ObjectHideFlags: 0

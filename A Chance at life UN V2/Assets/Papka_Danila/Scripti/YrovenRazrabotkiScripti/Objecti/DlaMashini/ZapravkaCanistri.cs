@@ -5,6 +5,11 @@ using UnityEngine;
 public class ZapravkaCanistri : MonoBehaviour
 {
     public float ColvoTopliva;
+
+    public GameObject UIvzaimodeistvie;
+    public GameObject UIvzaimodeistvieFalse;
+    public GameObject UIvzaimodeistvieCanFalse;
+    public GameObject UICanPerepolneno;
     private void OnTriggerStay(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
@@ -13,6 +18,20 @@ public class ZapravkaCanistri : MonoBehaviour
         {
             if (_Inventar.ColvoKanistr != 0)
             {
+                if (ColvoTopliva < 0.3)
+                {
+                    UIvzaimodeistvieFalse.SetActive(true);
+                    UIvzaimodeistvie.SetActive(false);
+                }
+                else
+                {
+                    UIvzaimodeistvie.SetActive(true);
+                }
+                if (_Inventar.ColvoTopliva >= _Inventar.MaxTopliva)
+                {
+                    UICanPerepolneno.SetActive(true);
+                    UIvzaimodeistvie.SetActive(false);
+                }
                 if (Input.GetKey(KeyCode.F))
                 {
                     if (_Inventar.ColvoTopliva <= _Inventar.MaxTopliva)
@@ -25,6 +44,21 @@ public class ZapravkaCanistri : MonoBehaviour
                     }
                 }
             }
+            else
+            {
+                UIvzaimodeistvieCanFalse.SetActive(true);
+            }
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
+        if (_PeredvizhenieIgroka != null)
+        {
+            UIvzaimodeistvieCanFalse.SetActive(false);
+            UIvzaimodeistvie.SetActive(false);
+            UICanPerepolneno.SetActive(false);
+            UIvzaimodeistvieFalse.SetActive(false);
         }
     }
 }
