@@ -204,6 +204,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ColvoShin: 0
+  ColvoKanistr: 0
+  ColvoTopliva: 0
+  MaxTopliva: 0
 --- !u!1 &1566458710280162315
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,6 +927,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePlayUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041278776169215263, guid: c19f865ab702abf468066a4bf89d604a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c19f865ab702abf468066a4bf89d604a, type: 3}
