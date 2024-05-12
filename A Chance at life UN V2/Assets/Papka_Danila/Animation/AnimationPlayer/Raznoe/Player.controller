@@ -1224,7 +1224,7 @@ AnimatorStateMachine:
     m_Position: {x: 970, y: 810, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6309523435277791638}
-    m_Position: {x: 1230, y: 810, z: 0}
+    m_Position: {x: 1320, y: 810, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2898245606034284183}
     m_Position: {x: 1100, y: 710, z: 0}
@@ -1393,6 +1393,12 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
+    m_Controller: {fileID: 0}
+  - m_Name: Shoot
+    m_Type: 3
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
     m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
