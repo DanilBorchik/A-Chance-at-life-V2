@@ -18,7 +18,7 @@ public class PlayerHealth : MonoBehaviour
     //public AudioSource DeadSound;
 
     private float _maxhp;
-    //public bool _OnYmer = false;
+    public bool _OnYmer = false;
 
     private void Start()
     {
@@ -76,7 +76,7 @@ public class PlayerHealth : MonoBehaviour
         //GetComponent<brodilna>().enabled = false;
         //GetComponent<Nogi>().enabled = false;
         //DeadSound.Play();
-        //_OnYmer = true;
+        _OnYmer = true;
     }
     private void DrawHealthBar()
     {

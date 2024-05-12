@@ -37,6 +37,11 @@ public class Pyla : MonoBehaviour
             {
                enemyHealth.DealDamage(damage);
             }
+            var stateEnemyHealth = other.gameObject.GetComponent<StateEnemyHealth>();
+            if (stateEnemyHealth != null)
+            {
+                stateEnemyHealth.DealDamage(damage);
+            }
         }
     }
     private void DestroyPyly()
