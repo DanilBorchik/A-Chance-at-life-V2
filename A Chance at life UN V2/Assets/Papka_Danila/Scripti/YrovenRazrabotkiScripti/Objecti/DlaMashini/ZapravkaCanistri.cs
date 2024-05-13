@@ -53,12 +53,14 @@ public class ZapravkaCanistri : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
+        var _Inventar = other.gameObject.GetComponent<Inventar>();
         if (_PeredvizhenieIgroka != null)
         {
             UIvzaimodeistvieCanFalse.SetActive(false);
             UIvzaimodeistvie.SetActive(false);
             UICanPerepolneno.SetActive(false);
             UIvzaimodeistvieFalse.SetActive(false);
+            _Inventar.ToplivoBar.SetActive(false);
         }
     }
 }

@@ -6,6 +6,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
 {
     public Car _Car;
     public GameObject _UIVzaimodeistvia;
+    public GameObject _UIVzaimodeistviaV2;
 
     private int ColvoShin;
 
@@ -37,8 +38,9 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             }
             if (DlaChegoTriger == 2)
             {
-                if (_Inventar.ColvoKanistr != 0)
+                if (_Inventar.ColvoKanistr != 0 && _Inventar.ColvoTopliva > 0.3)
                 {
+                    _UIVzaimodeistvia.SetActive(true);
                     if (Input.GetKey(KeyCode.F))
                     {
                         if (_Inventar.ColvoTopliva > 0.3)
@@ -48,18 +50,27 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
                         }
                     }
                 }
+                else
+                {
+                    _UIVzaimodeistviaV2.SetActive(true);
+                    _Inventar.ToplivoBar.SetActive(true);
+                    _UIVzaimodeistvia.SetActive(false);
+                }
             }
         }
     }
     private void OnTriggerExit(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
+        var _Inventar = other.gameObject.GetComponent<Inventar>();
 
-        if (DlaChegoTriger == 1)
+        if (_PeredvizhenieIgroka != null)
         {
-            if (_PeredvizhenieIgroka != null)
+            _Inventar.ToplivoBar.SetActive(false);
+            _UIVzaimodeistvia.SetActive(false);
+            if (DlaChegoTriger == 2)
             {
-                _UIVzaimodeistvia.SetActive(false);
+                _UIVzaimodeistviaV2.SetActive(false);
             }
         }
     }
