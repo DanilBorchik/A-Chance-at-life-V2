@@ -47,13 +47,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPoints: []
-  player: {fileID: 0}
-  _playerHealth: {fileID: 0}
-  _AnimationZombi: {fileID: 0}
+  player: {fileID: 8289962147778712277, guid: 460aed7093b7d40438ba61511ac751f6, type: 3}
+  _playerHealth: {fileID: 4874248945297727947, guid: 460aed7093b7d40438ba61511ac751f6,
+    type: 3}
+  _AnimationZombi: {fileID: 8744798067951770819}
   viewAngle: 60
   timerDlaPublici: 6
   timerPatrylDlaPublici: 5
   damage: 0
+  spead: 0
+  NugnoPatrylirovanie: 0
 --- !u!195 &1237294125883660196
 NavMeshAgent:
   m_ObjectHideFlags: 0
