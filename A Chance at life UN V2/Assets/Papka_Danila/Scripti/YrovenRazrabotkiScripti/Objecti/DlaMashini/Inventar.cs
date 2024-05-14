@@ -10,19 +10,47 @@ public class Inventar : MonoBehaviour
     public float ColvoTopliva;
     public int MaxTopliva;
 
+    public float _MaxPatron;
+    public float _PatroniVstvole;
+
     public RectTransform ColvoToplivaTransform;
     public GameObject ToplivoBar;
+    public RectTransform _PatroniRectTransform;
 
     private void Start()
+    {
+        SaveInventar();
+        PoloskaTopliva();
+        DrawPatroniBar();
+    }
+
+    private void SaveInventar()
     {
         ColvoShin = PlayerPrefs.GetInt("ColvoShin", ColvoShin);
         ColvoKanistr = PlayerPrefs.GetInt("ColvoKanistr", ColvoKanistr);
         ColvoTopliva = PlayerPrefs.GetFloat("ColvoTopliva", ColvoTopliva);
-        PoloskaTopliva();
     }
+
     private void Update()
     {
-        
+        Perezoradka();
+    }
+    private void Perezoradka()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            _PatroniVstvole = _MaxPatron;
+            DrawPatroniBar();
+        }
+    }
+    public void DealMinysPatroni()
+    {
+        _PatroniVstvole -= 1;
+        DrawPatroniBar();
+    }
+    private void DrawPatroniBar()
+    {
+        _PatroniRectTransform.anchorMax = new Vector2(_PatroniVstvole / _MaxPatron, 1);
     }
     public void Napolnenie(int ScolkoTopliva)
     {

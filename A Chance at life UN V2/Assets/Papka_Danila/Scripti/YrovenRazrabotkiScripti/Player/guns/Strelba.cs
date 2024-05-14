@@ -6,7 +6,7 @@ public class Strelba : MonoBehaviour
 {
     public Pyla PylaPrefab;
     public PeredvizhenieIgroka _PeredvizhenieIgroka;
-    public PlayerHealth _PlayerHealth;
+    public Inventar _Inventar;
     public Animator _animator;
 
     private int NomerAnimaciiStrelbi;
@@ -14,15 +14,11 @@ public class Strelba : MonoBehaviour
     private bool AnimationStrelbi;
     private float timerStrelbi;
     private float timerStrelbi1;
-    //public AudioSource Fireball;
 
-    // Start is called before the first frame update
     void Start()
     {
 
     }
-
-    // Update is called once per frame
     void Update()
     {
         ypravlenieAnimaciamiStrelbi();
@@ -61,10 +57,10 @@ public class Strelba : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            if (_PlayerHealth._Patroni > 0)
+            if (_Inventar._PatroniVstvole > 0)
             {
                 Instantiate(PylaPrefab, transform.position, transform.rotation);
-                _PlayerHealth.DealMinysPatroni(1);
+                _Inventar.DealMinysPatroni();
                 NomerAnimaciiStrelbi = 1;
                 Strelbi = true;
                 timerStrelbi = 0;

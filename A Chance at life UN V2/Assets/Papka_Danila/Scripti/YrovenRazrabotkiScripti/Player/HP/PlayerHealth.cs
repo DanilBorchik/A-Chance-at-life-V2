@@ -28,21 +28,11 @@ public class PlayerHealth : MonoBehaviour
     private void MaxChegoto()
     {
         _maxhp = _hp;
-        _Patroni = _ScocPatron;
     }
 
     void Update()
     {
-        Perezoradka();
-    }
 
-    private void Perezoradka()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            _Patroni = _ScocPatron;
-            DrawPatroniBar();
-        }
     }
 
     public void DealDamage(float damage)

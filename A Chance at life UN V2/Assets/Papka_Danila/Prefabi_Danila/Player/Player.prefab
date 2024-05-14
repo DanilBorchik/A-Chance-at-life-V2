@@ -142,8 +142,11 @@ MonoBehaviour:
   ColvoKanistr: 0
   ColvoTopliva: 0
   MaxTopliva: 0
+  _MaxPatron: 7
+  _PatroniVstvole: 0
   ColvoToplivaTransform: {fileID: 819138512073675227}
   ToplivoBar: {fileID: 4079754152291215642}
+  _PatroniRectTransform: {fileID: 1006111179376309735}
 --- !u!1 &1566458710280162315
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +339,7 @@ MonoBehaviour:
   PylaPrefab: {fileID: 8550327758109526270, guid: 1dc35fbd83d762344a7aee764d4d84f6,
     type: 3}
   _PeredvizhenieIgroka: {fileID: 8289962147778712277}
-  _PlayerHealth: {fileID: 4874248945297727947}
+  _Inventar: {fileID: 2442866494803036452}
   _animator: {fileID: 1508704902413411538}
   Strelbi: 0
 --- !u!1 &8044745863319946880
@@ -563,6 +566,86 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1375709159423532381, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Pause
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940065448814271289, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940065448814271289, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940065448814271289, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7849774895508680697}
+    - target: {fileID: 1940065448814271289, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940065448814271289, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ResumeGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1940065448814271289, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471587034840590097, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471587034840590097, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471587034840590097, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7849774895508680697}
+    - target: {fileID: 2471587034840590097, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471587034840590097, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MainMenuButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 2471587034840590097, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3128346668787155727, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Fon3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7162701102229102222, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Fon1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7202158615724688398, guid: 4716f2e43ed3d0649a673faaea879f6e,
+        type: 3}
+      propertyPath: m_Name
+      value: Fon2
       objectReference: {fileID: 0}
     - target: {fileID: 7980192067088505308, guid: 4716f2e43ed3d0649a673faaea879f6e,
         type: 3}
@@ -799,6 +882,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GamePlayUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 583107179615344203, guid: c19f865ab702abf468066a4bf89d604a,
+        type: 3}
+      propertyPath: m_Name
+      value: Patroni Bar
+      objectReference: {fileID: 0}
+    - target: {fileID: 2674242370767623868, guid: c19f865ab702abf468066a4bf89d604a,
+        type: 3}
+      propertyPath: m_Name
+      value: Value Status Patroni
       objectReference: {fileID: 0}
     - target: {fileID: 4041278776169215263, guid: c19f865ab702abf468066a4bf89d604a,
         type: 3}
