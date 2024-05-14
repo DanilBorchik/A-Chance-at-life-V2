@@ -15,6 +15,10 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
 
     public int DlaChegoTriger;
 
+    private void Start()
+    {
+        ColvoToplivaMashini = PlayerPrefs.GetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -47,6 +51,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
                         {
                             _Inventar.ZapravkaMashini();
                             ColvoToplivaMashini += 5f * Time.deltaTime;
+                            PlayerPrefs.SetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
                         }
                     }
                 }

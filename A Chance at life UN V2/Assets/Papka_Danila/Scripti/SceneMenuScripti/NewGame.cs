@@ -13,6 +13,8 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("tyrebool3", 0);
         PlayerPrefs.SetInt("ColvoKanistr", 0);
         PlayerPrefs.SetInt("ColvoShin", 0);
+        PlayerPrefs.SetFloat("ColvoToplivaMashini", 0);
+        PlayerPrefs.SetFloat("ColvoTopliva", 0);
         SceneManager.LoadScene(1);
     }
 }

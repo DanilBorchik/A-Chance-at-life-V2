@@ -332,6 +332,11 @@ PrefabInstance:
       propertyPath: MaxTopliva
       value: 49
       objectReference: {fileID: 0}
+    - target: {fileID: 4079754152291215642, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5449748591023975828, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -342,9 +347,19 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6106276720277199841, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6333728206653013160, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6483924664322572986, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6577132259098998495, guid: 460aed7093b7d40438ba61511ac751f6,
@@ -1062,6 +1077,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5434475388793514044, guid: 23536a199e760734d92134f04df4a71b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7014787042012458527, guid: 23536a199e760734d92134f04df4a71b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7086439592801481924, guid: 23536a199e760734d92134f04df4a71b,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1513,10 +1538,25 @@ PrefabInstance:
       propertyPath: ColvoTopliva
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1589194564024207420, guid: b1661483c1caaf842ad2397709b8160e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2847297599241766057, guid: b1661483c1caaf842ad2397709b8160e,
         type: 3}
       propertyPath: m_Name
       value: Cube (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5360508440959926567, guid: b1661483c1caaf842ad2397709b8160e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5520000128525323571, guid: b1661483c1caaf842ad2397709b8160e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6985886076439235131, guid: b1661483c1caaf842ad2397709b8160e,
         type: 3}

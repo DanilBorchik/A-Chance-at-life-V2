@@ -17,6 +17,7 @@ public class Inventar : MonoBehaviour
     {
         ColvoShin = PlayerPrefs.GetInt("ColvoShin", ColvoShin);
         ColvoKanistr = PlayerPrefs.GetInt("ColvoKanistr", ColvoKanistr);
+        ColvoTopliva = PlayerPrefs.GetFloat("ColvoTopliva", ColvoTopliva);
         PoloskaTopliva();
     }
     private void Update()
@@ -28,12 +29,14 @@ public class Inventar : MonoBehaviour
         ColvoTopliva += ScolkoTopliva * Time.deltaTime;
         ToplivoBar.SetActive(true);
         PoloskaTopliva();
+        PlayerPrefs.SetFloat("ColvoTopliva", ColvoTopliva);
     }
     public void ZapravkaMashini()
     {
         ColvoTopliva -= 5f * Time.deltaTime;
         ToplivoBar.SetActive(true);
         PoloskaTopliva();
+        PlayerPrefs.SetFloat("ColvoTopliva", ColvoTopliva);
     }
     public void PoloskaTopliva()
     {

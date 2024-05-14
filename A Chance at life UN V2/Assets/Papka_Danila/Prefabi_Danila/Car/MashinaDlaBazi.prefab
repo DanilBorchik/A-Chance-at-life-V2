@@ -588,6 +588,7 @@ MonoBehaviour:
   - {fileID: 383897393}
   - {fileID: 1999674484}
   - {fileID: 911745367}
+  Toplivo: {fileID: 3027055183135968101}
   ColvoToplivaMashini: 0
 --- !u!1001 &298046249426089080
 PrefabInstance:

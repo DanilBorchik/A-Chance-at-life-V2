@@ -6,6 +6,7 @@ public class Car : MonoBehaviour
 {
     public List<GameObject> tyre;
     public List<GameObject> tyreTriger;
+    public TrigerDlaVzaimodeistvia Toplivo;
 
     public float ColvoToplivaMashini;
 
@@ -20,6 +21,7 @@ public class Car : MonoBehaviour
         _tyrebool1 = PlayerPrefs.GetInt("tyrebool1", _tyrebool1);
         _tyrebool2 = PlayerPrefs.GetInt("tyrebool2", _tyrebool2);
         _tyrebool3 = PlayerPrefs.GetInt("tyrebool3", _tyrebool3);
+        ColvoToplivaMashini = PlayerPrefs.GetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
         if (_tyrebool == 1)
         {
             tyre[0].SetActive(true);
