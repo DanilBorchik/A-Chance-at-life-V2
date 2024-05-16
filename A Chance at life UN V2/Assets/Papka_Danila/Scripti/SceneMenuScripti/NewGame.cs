@@ -15,6 +15,7 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("ColvoShin", 0);
         PlayerPrefs.SetFloat("ColvoToplivaMashini", 0);
         PlayerPrefs.SetFloat("ColvoTopliva", 0);
+        PlayerPrefs.SetInt("ColvoPatron", 0);
         SceneManager.LoadScene(1);
     }
 }

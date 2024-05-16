@@ -10,7 +10,9 @@ public class Inventar : MonoBehaviour
     public float ColvoTopliva;
     public int MaxTopliva;
 
-    public float _MaxPatron;
+    public int _Patroni;
+    public int _MaxPatroni;
+    private float _MaxPatronVstvole = 7;
     public float _PatroniVstvole;
 
     public RectTransform ColvoToplivaTransform;
@@ -29,19 +31,34 @@ public class Inventar : MonoBehaviour
         ColvoShin = PlayerPrefs.GetInt("ColvoShin", ColvoShin);
         ColvoKanistr = PlayerPrefs.GetInt("ColvoKanistr", ColvoKanistr);
         ColvoTopliva = PlayerPrefs.GetFloat("ColvoTopliva", ColvoTopliva);
+        _Patroni = PlayerPrefs.GetInt("ColvoPatron", _Patroni);
     }
 
     private void Update()
     {
         Perezoradka();
+        while (_Patroni > _MaxPatroni)
+        {
+            _Patroni -= 1;
+        }
     }
     private void Perezoradka()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            _PatroniVstvole = _MaxPatron;
+            while (_PatroniVstvole < 7 && _Patroni != 0)
+            {
+                _PatroniVstvole += 1;
+                _Patroni -= 1;
+            }
+            PlayerPrefs.SetInt("ColvoPatron", _Patroni);
             DrawPatroniBar();
         }
+    }
+    public void AddPatroni(int colvo)
+    {   
+        _Patroni += colvo;
+        PlayerPrefs.SetInt("ColvoPatron", _Patroni);
     }
     public void DealMinysPatroni()
     {
@@ -50,7 +67,7 @@ public class Inventar : MonoBehaviour
     }
     private void DrawPatroniBar()
     {
-        _PatroniRectTransform.anchorMax = new Vector2(_PatroniVstvole / _MaxPatron, 1);
+        _PatroniRectTransform.anchorMax = new Vector2(_PatroniVstvole / _MaxPatronVstvole, 1);
     }
     public void Napolnenie(int ScolkoTopliva)
     {

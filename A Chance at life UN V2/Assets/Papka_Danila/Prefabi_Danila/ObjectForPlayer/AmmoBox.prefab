@@ -28,6 +28,7 @@ GameObject:
   - component: {fileID: 5718436360580256327}
   - component: {fileID: 7156928781814636025}
   - component: {fileID: 5378149347775276847}
+  - component: {fileID: 5167853042410770783}
   m_Layer: 0
   m_Name: KorobkaPatronForPistol
   m_TagString: Untagged
@@ -104,11 +105,26 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7051057546898679569}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2, z: 1}
+  m_Center: {x: 0, y: 0.8, z: 0}
+--- !u!114 &5167853042410770783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7051057546898679569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25fa6c7e5166d994f802c5cebdf852c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HowPatron: 20
+  Corobka: {fileID: 6983249039267279538}
+  UIpodbora: {fileID: 0}
 --- !u!1001 &6983544003665802298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -118,7 +134,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1113005346653832, guid: d2030e1dd6e306449a4df92ccbf93938, type: 3}
       propertyPath: m_Name
-      value: SM_Wep_Pistol_Ammo_Box_01 Variant
+      value: AmmoBox
       objectReference: {fileID: 0}
     - target: {fileID: 4578184957674552, guid: d2030e1dd6e306449a4df92ccbf93938, type: 3}
       propertyPath: m_RootOrder
@@ -174,6 +190,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4578184957674552, guid: d2030e1dd6e306449a4df92ccbf93938, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 64312156741857416, guid: d2030e1dd6e306449a4df92ccbf93938,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 64312156741857416, guid: d2030e1dd6e306449a4df92ccbf93938,
+        type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
