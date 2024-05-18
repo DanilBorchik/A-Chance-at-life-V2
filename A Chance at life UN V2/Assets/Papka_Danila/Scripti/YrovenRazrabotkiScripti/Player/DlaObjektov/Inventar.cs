@@ -18,10 +18,10 @@ public class Inventar : MonoBehaviour
     public RectTransform ColvoToplivaTransform;
     public GameObject ToplivoBar;
     public RectTransform _PatroniRectTransform;
+    public InventarUI _InbentarUI;
 
     private void Start()
     {
-        SaveInventar();
         PoloskaTopliva();
         DrawPatroniBar();
     }
@@ -37,11 +37,31 @@ public class Inventar : MonoBehaviour
     private void Update()
     {
         Perezoradka();
+        UborkaLishnih();
+        SaveInventar();
+        ProverkaPistolPatron();
+    }
+
+    private void ProverkaPistolPatron()
+    {
+        if (_Patroni <= 0)
+        {
+            _InbentarUI._YpravlenieIcon(1, false, 0);
+        }
+        if (_Patroni > 0)
+        {
+            _InbentarUI._YpravlenieIcon(1, true, 0);
+        }
+    }
+
+    private void UborkaLishnih()
+    {
         while (_Patroni > _MaxPatroni)
         {
             _Patroni -= 1;
         }
     }
+
     private void Perezoradka()
     {
         if (Input.GetKeyDown(KeyCode.R))
