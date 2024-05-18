@@ -2,19 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KorobkaPatronForPistol : MonoBehaviour
+public class HealObject : MonoBehaviour
 {
-    public int HowPatron;
+    public int _typeAptechki;
     public GameObject Corobka;
     private void OnTriggerStay(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
         var _Inventar = other.gameObject.GetComponent<Inventar>();
-        if (_PeredvizhenieIgroka != false)
+        if (_PeredvizhenieIgroka != null)
         {
-            if( _Inventar._Patroni < _Inventar._MaxPatroni)
+            if(_Inventar._colvoAptechek < _Inventar._MaxColvoAptechek)
             {
-                _Inventar.AddPatroni(HowPatron);
+                _Inventar.AddAptechki(_typeAptechki);
                 Destroy(Corobka);
             }
         }

@@ -10,10 +10,19 @@ public class Inventar : MonoBehaviour
     public float ColvoTopliva;
     public int MaxTopliva;
 
+    public float _VsegoPatron;
+
     public int _Patroni;
     public int _MaxPatroni;
     private float _MaxPatronVstvole = 7;
     public float _PatroniVstvole;
+
+    public float _colvoAptechek;
+    public float _MaxColvoAptechek;
+
+    public int _colvoBigAptechek;
+    public int _colvoMediumAptechek;
+    public int _colvoSmalAptechek;
 
     public RectTransform ColvoToplivaTransform;
     public GameObject ToplivoBar;
@@ -22,55 +31,89 @@ public class Inventar : MonoBehaviour
 
     private void Start()
     {
+        LoadInventar();
         PoloskaTopliva();
         DrawPatroniBar();
+        ProverkaPistolPatron();
+        ProverkaAptechek();
     }
 
-    private void SaveInventar()
+    private void LoadInventar()
     {
         ColvoShin = PlayerPrefs.GetInt("ColvoShin", ColvoShin);
         ColvoKanistr = PlayerPrefs.GetInt("ColvoKanistr", ColvoKanistr);
         ColvoTopliva = PlayerPrefs.GetFloat("ColvoTopliva", ColvoTopliva);
         _Patroni = PlayerPrefs.GetInt("ColvoPatron", _Patroni);
+        _colvoBigAptechek = PlayerPrefs.GetInt("ColvoBigAptechek", _colvoBigAptechek);
+        _colvoMediumAptechek = PlayerPrefs.GetInt("ColvoMediumAptechek", _colvoMediumAptechek);
+        _colvoSmalAptechek = PlayerPrefs.GetInt("ColvoSmalAptechek", _colvoSmalAptechek);
+        _colvoAptechek = PlayerPrefs.GetFloat("ColvoAptechek", _colvoAptechek);
     }
 
     private void Update()
     {
         Perezoradka();
         UborkaLishnih();
-        SaveInventar();
-        ProverkaPistolPatron();
     }
 
     private void ProverkaPistolPatron()
     {
         if (_Patroni <= 0)
         {
-            _InbentarUI._YpravlenieIcon(1, false, 0);
+            _InbentarUI._YpravlenieIcon(1, 1, false, 0);
         }
         if (_Patroni > 0)
         {
-            _InbentarUI._YpravlenieIcon(1, true, 0);
+            _InbentarUI._YpravlenieIcon(1, 1, true, 0);
+        }
+    }
+    private void ProverkaAptechek()
+    {
+        if (_colvoBigAptechek <= 0)
+        {
+            _InbentarUI._YpravlenieIcon(2, 1, false, 0);
+        }
+        if (_colvoBigAptechek > 0)
+        {
+            _InbentarUI._YpravlenieIcon(2, 1, true, 0);
+        }
+        if (_colvoMediumAptechek <= 0)
+        {
+            _InbentarUI._YpravlenieIcon(2, 2, false, 1);
+        }
+        if (_colvoMediumAptechek > 0)
+        {
+            _InbentarUI._YpravlenieIcon(2, 2, true, 1);
+        }
+        if (_colvoSmalAptechek <= 0)
+        {
+            _InbentarUI._YpravlenieIcon(2, 3, false, 2);
+        }
+        if (_colvoSmalAptechek > 0)
+        {
+            _InbentarUI._YpravlenieIcon(2, 3, true, 2);
         }
     }
 
     private void UborkaLishnih()
     {
-        while (_Patroni > _MaxPatroni)
+        if (_Patroni > _MaxPatroni)
         {
-            _Patroni -= 1;
+            _Patroni = _MaxPatroni;
         }
+        ProverkaPistolPatron();
     }
 
     private void Perezoradka()
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            while (_PatroniVstvole < 7 && _Patroni != 0)
+            while (_PatroniVstvole < 7 && _Patroni > 0)
             {
                 _PatroniVstvole += 1;
                 _Patroni -= 1;
             }
+            ProverkaPistolPatron();
             PlayerPrefs.SetInt("ColvoPatron", _Patroni);
             DrawPatroniBar();
         }
@@ -79,6 +122,30 @@ public class Inventar : MonoBehaviour
     {   
         _Patroni += colvo;
         PlayerPrefs.SetInt("ColvoPatron", _Patroni);
+        ProverkaPistolPatron();
+    }
+    public void AddAptechki(int typeAptechki)
+    {
+        if(typeAptechki == 1)
+        {
+            _colvoBigAptechek += 1;
+            PlayerPrefs.SetInt("ColvoBigAptechek", _colvoBigAptechek);
+            _colvoAptechek += 1.5f;
+        }
+        if (typeAptechki == 2)
+        {
+            _colvoMediumAptechek += 1;
+            PlayerPrefs.SetInt("ColvoMediumAptechek", _colvoMediumAptechek);
+            _colvoAptechek += 1;
+        }
+        if (typeAptechki == 3)
+        {
+            _colvoSmalAptechek += 1;
+            PlayerPrefs.SetInt("ColvoSmalAptechek", _colvoSmalAptechek);
+            _colvoAptechek += 0.5f;
+        }
+        PlayerPrefs.SetFloat("ColvoAptechek", _colvoAptechek);
+        ProverkaAptechek();
     }
     public void DealMinysPatroni()
     {

@@ -14,7 +14,7 @@ public class CameraZaTexture : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(CameraAxisTransform.position, ray, out hit, wishDistance))
         {
-            if (hit.collider.gameObject && hit.collider.isTrigger)
+            if (hit.collider.gameObject && !hit.collider.isTrigger)
             {
                 transform.position = hit.point;
             }

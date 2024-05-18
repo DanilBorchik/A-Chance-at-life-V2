@@ -11,6 +11,9 @@ public class InventarUI : MonoBehaviour
     [SerializeField] List<GameObject> _AmmoIcon;
     [SerializeField] List<GameObject> _HealsIcon;
     [SerializeField] TextMeshProUGUI _colvoPatronPistol;
+    [SerializeField] TextMeshProUGUI _colvoBigAptechek;
+    [SerializeField] TextMeshProUGUI _colvoMediumAptechek;
+    [SerializeField] TextMeshProUGUI _colvoSmalAptechek;
 
     public Inventar _InventarScript;
     public Strelba _Strelba;
@@ -62,32 +65,59 @@ public class InventarUI : MonoBehaviour
         _Veshi.SetActive(false);
         _Tetrad.SetActive(true);
     }
-    public void _YpravlenieIcon(int type, bool sostoianie, int num)
+    public void _YpravlenieIcon(int razdel, int type, bool sostoianie, int num)
     {
-        var _numberAmmo = _AmmoIcon[num];
-        var _numberHeals = _HealsIcon[num];
-        if (type == 1)
+        if (razdel == 1)
         {
-            if (sostoianie == true)
+            var _numberAmmo = _AmmoIcon[num];
+            if (type == 1)
             {
-                _numberAmmo.SetActive(true);
-                _colvoPatronPistol.text = "" + _InventarScript._Patroni;
-            }
-            else
-            {
-                _numberAmmo.SetActive(false);
+                SostoianieAmmo(sostoianie, _numberAmmo);
+                _colvoPatronPistol.text = _InventarScript._Patroni.ToString();
             }
         }
-        if(type == 2)
+        if (razdel == 2)
         {
-            if (sostoianie == true)
+            var _numberHeals = _HealsIcon[num];
+            if (type == 1)
             {
-                _numberHeals.SetActive(true);
+                SosotoianieAptechki(sostoianie, _numberHeals);
+                _colvoBigAptechek.text = _InventarScript._colvoBigAptechek.ToString();
             }
-            else
+            if (type == 2)
             {
-                _numberHeals.SetActive(false);
+                SosotoianieAptechki(sostoianie, _numberHeals);
+                _colvoMediumAptechek.text = _InventarScript._colvoMediumAptechek.ToString();
             }
+            if (type == 3)
+            {
+                SosotoianieAptechki(sostoianie, _numberHeals);
+                _colvoSmalAptechek.text = _InventarScript._colvoSmalAptechek.ToString();
+            }
+        }
+    }
+
+    private void SostoianieAmmo(bool sostoianie, GameObject _numberAmmo)
+    {
+        if (sostoianie == true)
+        {
+            _numberAmmo.SetActive(true);
+        }
+        else
+        {
+            _numberAmmo.SetActive(false);
+        }
+    }
+
+    private static void SosotoianieAptechki(bool sostoianie, GameObject _numberHeals)
+    {
+        if (sostoianie == true)
+        {
+            _numberHeals.SetActive(true);
+        }
+        else
+        {
+            _numberHeals.SetActive(false);
         }
     }
 }

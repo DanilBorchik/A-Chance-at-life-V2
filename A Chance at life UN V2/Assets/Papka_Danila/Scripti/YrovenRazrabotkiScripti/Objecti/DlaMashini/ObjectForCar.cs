@@ -25,7 +25,7 @@ public class ObjectForCar : MonoBehaviour
                 if (_Inventar.ColvoShin == 0)
                 {
                     _UIVzaimodeistvia.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.F))
+                    if (Input.GetKey(KeyCode.F))
                     {
                         _Inventar.ColvoShin += 1;
                         ColvoShin = _Inventar.ColvoShin;
@@ -43,7 +43,7 @@ public class ObjectForCar : MonoBehaviour
                 if (_Inventar.ColvoKanistr == 0)
                 {
                     _UIVzaimodeistvia.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.F))
+                    if (Input.GetKey(KeyCode.F))
                     {
                         _Inventar.ColvoKanistr += 1;
                         ColvoKanistr = _Inventar.ColvoKanistr;
