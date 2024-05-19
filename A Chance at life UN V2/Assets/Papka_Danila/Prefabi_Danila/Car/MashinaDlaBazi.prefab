@@ -110,6 +110,7 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 6001524341686349176}
   _UIVzaimodeistviaV2: {fileID: 0}
+  _Inventar: {fileID: 0}
   KakoyNamber: 1
   ColvoToplivaMashini: 0
   DlaChegoTriger: 1
@@ -223,6 +224,7 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 3381919043053957613}
   _UIVzaimodeistviaV2: {fileID: 0}
+  _Inventar: {fileID: 0}
   KakoyNamber: 3
   ColvoToplivaMashini: 0
   DlaChegoTriger: 1
@@ -336,6 +338,7 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 3646433131377338066}
   _UIVzaimodeistviaV2: {fileID: 0}
+  _Inventar: {fileID: 0}
   KakoyNamber: 0
   ColvoToplivaMashini: 0
   DlaChegoTriger: 1
@@ -449,6 +452,7 @@ MonoBehaviour:
   _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 6196617135507372608}
   _UIVzaimodeistviaV2: {fileID: 0}
+  _Inventar: {fileID: 0}
   KakoyNamber: 2
   ColvoToplivaMashini: 0
   DlaChegoTriger: 1
@@ -563,6 +567,7 @@ MonoBehaviour:
   _Car: {fileID: 0}
   _UIVzaimodeistvia: {fileID: 2659293096755616666}
   _UIVzaimodeistviaV2: {fileID: 1068780070653255097}
+  _Inventar: {fileID: 0}
   KakoyNamber: 0
   ColvoToplivaMashini: 0
   DlaChegoTriger: 2
