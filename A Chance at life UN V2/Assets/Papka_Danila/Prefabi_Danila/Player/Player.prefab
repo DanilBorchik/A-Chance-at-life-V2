@@ -223,6 +223,7 @@ MonoBehaviour:
   ToplivoBar: {fileID: 4079754152291215642}
   _PatroniRectTransform: {fileID: 1006111179376309735}
   _InbentarUI: {fileID: 1230560854461434376}
+  _PlayerHealth: {fileID: 4874248945297727947}
 --- !u!114 &1230560854461434376
 MonoBehaviour:
   m_ObjectHideFlags: 0

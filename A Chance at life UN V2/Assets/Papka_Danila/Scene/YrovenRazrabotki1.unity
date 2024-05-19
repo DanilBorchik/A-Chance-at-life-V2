@@ -948,6 +948,10 @@ PrefabInstance:
       propertyPath: inventar
       value: 
       objectReference: {fileID: 1729294303}
+    - target: {fileID: 383897395, guid: 23536a199e760734d92134f04df4a71b, type: 3}
+      propertyPath: _Inventar
+      value: 
+      objectReference: {fileID: 1729294303}
     - target: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: tyre.Array.data[1]
       value: 
@@ -956,12 +960,24 @@ PrefabInstance:
       propertyPath: inventar
       value: 
       objectReference: {fileID: 1729294303}
+    - target: {fileID: 911745369, guid: 23536a199e760734d92134f04df4a71b, type: 3}
+      propertyPath: _Inventar
+      value: 
+      objectReference: {fileID: 1729294303}
     - target: {fileID: 1070430525, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: inventar
       value: 
       objectReference: {fileID: 1729294303}
+    - target: {fileID: 1070430525, guid: 23536a199e760734d92134f04df4a71b, type: 3}
+      propertyPath: _Inventar
+      value: 
+      objectReference: {fileID: 1729294303}
     - target: {fileID: 1999674486, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: inventar
+      value: 
+      objectReference: {fileID: 1729294303}
+    - target: {fileID: 1999674486, guid: 23536a199e760734d92134f04df4a71b, type: 3}
+      propertyPath: _Inventar
       value: 
       objectReference: {fileID: 1729294303}
     - target: {fileID: 377284954243459158, guid: 23536a199e760734d92134f04df4a71b,
@@ -979,6 +995,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3027055183135968101, guid: 23536a199e760734d92134f04df4a71b,
+        type: 3}
+      propertyPath: _Inventar
+      value: 
+      objectReference: {fileID: 1729294303}
     - target: {fileID: 3641511317468973866, guid: 23536a199e760734d92134f04df4a71b,
         type: 3}
       propertyPath: m_IsActive

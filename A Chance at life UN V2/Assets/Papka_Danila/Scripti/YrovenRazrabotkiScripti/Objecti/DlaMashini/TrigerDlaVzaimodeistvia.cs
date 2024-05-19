@@ -7,8 +7,10 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     public Car _Car;
     public GameObject _UIVzaimodeistvia;
     public GameObject _UIVzaimodeistviaV2;
+    public Inventar _Inventar;
 
     private int ColvoShin;
+    private bool _PlayerTrigere;
 
     public int KakoyNamber;
     public float ColvoToplivaMashini;
@@ -18,6 +20,34 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     private void Start()
     {
         ColvoToplivaMashini = PlayerPrefs.GetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
+    }
+    private void Update()
+    {
+        if (_PlayerTrigere == true)
+        {
+            if (DlaChegoTriger == 1)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    _Car.BusRecovery(KakoyNamber);
+                    _Inventar.ColvoShin -= 1;
+                    ColvoShin = _Inventar.ColvoShin;
+                    PlayerPrefs.SetInt("ColvoShin", ColvoShin);
+                }
+            }
+            if (DlaChegoTriger == 2)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    if (_Inventar.ColvoTopliva > 0.3)
+                    {
+                        _Inventar.ZapravkaMashini();
+                        ColvoToplivaMashini += 5f * Time.deltaTime;
+                        PlayerPrefs.SetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
+                    }
+                }
+            }
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -31,13 +61,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
                 if (_Inventar.ColvoShin != 0)
                 {
                     _UIVzaimodeistvia.SetActive(true);
-                    if (Input.GetKeyDown(KeyCode.F))
-                    {
-                        _Car.BusRecovery(KakoyNamber);
-                        _Inventar.ColvoShin -= 1;
-                        ColvoShin = _Inventar.ColvoShin;
-                        PlayerPrefs.SetInt("ColvoShin", ColvoShin);
-                    }
+                    _PlayerTrigere = true;
                 }
             }
             if (DlaChegoTriger == 2)
@@ -45,15 +69,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
                 if (_Inventar.ColvoKanistr != 0 && _Inventar.ColvoTopliva > 0.3)
                 {
                     _UIVzaimodeistvia.SetActive(true);
-                    if (Input.GetKey(KeyCode.F))
-                    {
-                        if (_Inventar.ColvoTopliva > 0.3)
-                        {
-                            _Inventar.ZapravkaMashini();
-                            ColvoToplivaMashini += 5f * Time.deltaTime;
-                            PlayerPrefs.SetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
-                        }
-                    }
+                    _PlayerTrigere = true;
                 }
                 else
                 {
@@ -71,6 +87,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
 
         if (_PeredvizhenieIgroka != null)
         {
+            _PlayerTrigere = false;
             _Inventar.ToplivoBar.SetActive(false);
             _UIVzaimodeistvia.SetActive(false);
             if (DlaChegoTriger == 2)

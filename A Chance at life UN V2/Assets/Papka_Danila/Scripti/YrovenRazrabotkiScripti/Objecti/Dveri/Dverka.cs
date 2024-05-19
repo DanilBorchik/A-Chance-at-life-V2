@@ -9,9 +9,30 @@ public class Dverka : MonoBehaviour
     public GameObject _VizualVzaimodeistviaZakrit;
 
     private bool Otkrita;
+    private bool _PlayerTriger;
     private void Update()
     {
-
+        if (_PlayerTriger == true)
+        {
+            if (Otkrita == false)
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    DverkaViz.DverkaOtkrivaska(90);
+                    _VizualVzaimodeistvia.SetActive(false);
+                    Otkrita = true;
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    DverkaViz.DverkaOtkrivaska(0);
+                    _VizualVzaimodeistviaZakrit.SetActive(false);
+                    Otkrita = false;
+                }
+            }
+        }
     }
     private void OnTriggerStay(Collider other)
     {
@@ -22,12 +43,7 @@ public class Dverka : MonoBehaviour
             if (_PeredvizhenieIgroka != null)
             {
                 _VizualVzaimodeistvia.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    DverkaViz.DverkaOtkrivaska(90);
-                    _VizualVzaimodeistvia.SetActive(false);
-                    Otkrita = true;
-                }
+                _PlayerTriger = true;
             }
             else
             {
@@ -39,12 +55,7 @@ public class Dverka : MonoBehaviour
             if (_PeredvizhenieIgroka != null)
             {
                 _VizualVzaimodeistviaZakrit.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.F))
-                {
-                    DverkaViz.DverkaOtkrivaska(0);
-                    _VizualVzaimodeistviaZakrit.SetActive(false);
-                    Otkrita = false;
-                }
+                _PlayerTriger = true;
             }
             else
             {
@@ -60,6 +71,7 @@ public class Dverka : MonoBehaviour
         {
             _VizualVzaimodeistvia.SetActive(false);
             _VizualVzaimodeistviaZakrit.SetActive(false);
+            _PlayerTriger = false;
         }
     }
 }

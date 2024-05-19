@@ -29,6 +29,8 @@ public class Inventar : MonoBehaviour
     public RectTransform _PatroniRectTransform;
     public InventarUI _InbentarUI;
 
+    public PlayerHealth _PlayerHealth;
+
     private void Start()
     {
         LoadInventar();
@@ -53,7 +55,48 @@ public class Inventar : MonoBehaviour
     private void Update()
     {
         Perezoradka();
+        IspolzovanieAptechek();
         UborkaLishnih();
+    }
+
+    private void IspolzovanieAptechek()
+    {
+        if (_colvoBigAptechek != 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                _PlayerHealth.AddHealth(100);
+                _colvoAptechek -= 1.5f;
+                _colvoBigAptechek -= 1;
+                ProverkaAptechek();
+                PlayerPrefs.SetInt("ColvoBigAptechek", _colvoBigAptechek);
+                PlayerPrefs.SetFloat("ColvoAptechek", _colvoAptechek);
+            }
+        }
+        if (_colvoMediumAptechek != 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                _PlayerHealth.AddHealth(50);
+                _colvoAptechek -= 1;
+                _colvoMediumAptechek -= 1;
+                ProverkaAptechek();
+                PlayerPrefs.SetInt("ColvoMediumAptechek", _colvoMediumAptechek);
+                PlayerPrefs.SetFloat("ColvoAptechek", _colvoAptechek);
+            }
+        }
+        if (_colvoSmalAptechek != 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Alpha5))
+            {
+                _PlayerHealth.AddHealth(25);
+                _colvoAptechek -= 0.5f;
+                _colvoSmalAptechek -= 1;
+                ProverkaAptechek();
+                PlayerPrefs.SetInt("ColvoSmalAptechek", _colvoSmalAptechek);
+                PlayerPrefs.SetFloat("ColvoAptechek", _colvoAptechek);
+            }
+        }
     }
 
     private void ProverkaPistolPatron()
