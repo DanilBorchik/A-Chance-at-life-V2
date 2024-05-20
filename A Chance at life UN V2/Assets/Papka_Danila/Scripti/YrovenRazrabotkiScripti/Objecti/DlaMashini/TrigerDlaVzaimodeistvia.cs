@@ -7,6 +7,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
     public Car _Car;
     public GameObject _UIVzaimodeistvia;
     public GameObject _UIVzaimodeistviaV2;
+    public GameObject _UIKanistriNet;
     public Inventar _Inventar;
 
     private int ColvoShin;
@@ -37,7 +38,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             }
             if (DlaChegoTriger == 2)
             {
-                if (Input.GetKeyDown(KeyCode.F))
+                if (Input.GetKey(KeyCode.F))
                 {
                     if (_Inventar.ColvoTopliva > 0.3)
                     {
@@ -66,16 +67,23 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             }
             if (DlaChegoTriger == 2)
             {
-                if (_Inventar.ColvoKanistr != 0 && _Inventar.ColvoTopliva > 0.3)
+                if (_Inventar.ColvoKanistr != 0)
                 {
-                    _UIVzaimodeistvia.SetActive(true);
-                    _PlayerTrigere = true;
+                    if ( _Inventar.ColvoTopliva > 0.3)
+                    {
+                        _UIVzaimodeistvia.SetActive(true);
+                        _PlayerTrigere = true;
+                    }
+                    else
+                    {
+                        _UIVzaimodeistviaV2.SetActive(true);
+                        _Inventar.ToplivoBar.SetActive(true);
+                        _UIVzaimodeistvia.SetActive(false);
+                    }
                 }
                 else
                 {
-                    _UIVzaimodeistviaV2.SetActive(true);
-                    _Inventar.ToplivoBar.SetActive(true);
-                    _UIVzaimodeistvia.SetActive(false);
+                    _UIKanistriNet.SetActive(true);
                 }
             }
         }
@@ -93,6 +101,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             if (DlaChegoTriger == 2)
             {
                 _UIVzaimodeistviaV2.SetActive(false);
+                _UIKanistriNet.SetActive(false);
             }
         }
     }

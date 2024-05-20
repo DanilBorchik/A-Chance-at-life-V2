@@ -10,6 +10,7 @@ public class Pauza : MonoBehaviour
     public PovorotCameri _PovorotCameri;
 
     bool _isPaused = false;
+    public bool DomGG;
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -32,7 +33,10 @@ public class Pauza : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         _PovorotCameri.enabled = false;
-        _Strelba.enabled = false;
+        if (DomGG == false)
+        {
+            _Strelba.enabled = false;
+        }
     }
 
     public void ResumeGame()
@@ -43,7 +47,10 @@ public class Pauza : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _PovorotCameri.enabled = true;
-        _Strelba.enabled = true;
+        if (DomGG == false)
+        {
+            _Strelba.enabled = true;
+        }
     }
 
     public void MainMenuButton()

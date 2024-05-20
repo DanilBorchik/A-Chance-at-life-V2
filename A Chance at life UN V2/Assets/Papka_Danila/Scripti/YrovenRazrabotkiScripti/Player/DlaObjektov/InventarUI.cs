@@ -19,6 +19,8 @@ public class InventarUI : MonoBehaviour
     public Strelba _Strelba;
     public PovorotCameri _PovorotCameri;
 
+    public bool DomGG;
+
     private bool _InventarVkL = false;
 
     private void Update()
@@ -43,7 +45,10 @@ public class InventarUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         _PovorotCameri.enabled = false;
-        _Strelba.enabled = false;
+        if (DomGG == false)
+        {
+            _Strelba.enabled = false;
+        }
     }
     public void ResumeGame()
     {
@@ -53,7 +58,10 @@ public class InventarUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _PovorotCameri.enabled = true;
-        _Strelba.enabled = true;
+        if (DomGG == false)
+        {
+            _Strelba.enabled = false;
+        }
     }
     public void Veshi()
     {
