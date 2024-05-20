@@ -10,8 +10,9 @@ public class PlayerHealth : MonoBehaviour
     public RectTransform _hpRectTransform;
     public RectTransform _PatroniRectTransform;
 
-    //public GameObject gameplayUI;
-    //public GameObject gameOverScren;
+    public Pricel pricel;
+    public GameObject gameplayUI;
+    public GameObject gameOverScren;
     //public GameObject stvol;
     //public Animator _animator;
     //public AudioSource HitSound;
@@ -30,9 +31,9 @@ public class PlayerHealth : MonoBehaviour
         _maxhp = _hp;
     }
 
-    void Update()
+    public bool IsAlive()
     {
-
+        return _hp > 0;
     }
 
     public void DealDamage(float damage)
@@ -40,11 +41,11 @@ public class PlayerHealth : MonoBehaviour
         _hp -= damage;
         if (_hp <= 0)
         {
-            //if (_OnYmer != true)
-            //{
+            if (_OnYmer != true)
+            {
                 ded();
                 //_animator.SetBool("Death", true);
-            //}
+            }
         }
         //if (_OnYmer != true)
         //{
@@ -59,12 +60,15 @@ public class PlayerHealth : MonoBehaviour
     }
     private void ded()
     {
-        //gameplayUI.SetActive(false);
-        //gameOverScren.SetActive(true);
-        //stvol.GetComponent<CasterFireball>().enabled = false;
-        //stvol.GetComponent<CastYmenshenie>().enabled = false;
-        //GetComponent<brodilna>().enabled = false;
-        //GetComponent<Nogi>().enabled = false;
+        gameplayUI.SetActive(false);
+        gameOverScren.SetActive(true);
+        //animator.SetTrigger("death");
+
+        GetComponent<PeredvizhenieIgroka>().enabled = false;
+        pricel.GetComponent<Strelba>().enabled = false;
+        pricel.GetComponent<Pricel>().enabled = false;
+        GetComponent<PovorotCameri>().enabled = false;
+
         //DeadSound.Play();
         _OnYmer = true;
     }
