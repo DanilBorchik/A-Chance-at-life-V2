@@ -71,8 +71,12 @@ public class EnemyAIv2 : MonoBehaviour
 
     private void NoticePlayerUpdate()
     {
-        var direction = player.transform.position - transform.position;
         _isPlayerNoticed = false;
+
+        if (!_playerHealth.IsAlive()) return;
+
+        var direction = player.transform.position - transform.position;
+        
         if (Vector3.Angle(transform.forward, direction) < viewAngle)
         {
             RaycastHit hit;
