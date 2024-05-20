@@ -7,6 +7,8 @@ public class Dverka : MonoBehaviour
     public DverVizualnaia DverkaViz;
     public GameObject _VizualVzaimodeistvia;
     public GameObject _VizualVzaimodeistviaZakrit;
+    public float povorotdveriOtkritie;
+    public float povorotdveriZakritie;
 
     private bool Otkrita;
     private bool _PlayerTriger;
@@ -18,7 +20,7 @@ public class Dverka : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    DverkaViz.DverkaOtkrivaska(90);
+                    DverkaViz.DverkaOtkrivaska(povorotdveriOtkritie);
                     _VizualVzaimodeistvia.SetActive(false);
                     Otkrita = true;
                 }
@@ -27,7 +29,7 @@ public class Dverka : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    DverkaViz.DverkaOtkrivaska(0);
+                    DverkaViz.DverkaOtkrivaska(povorotdveriZakritie);
                     _VizualVzaimodeistviaZakrit.SetActive(false);
                     Otkrita = false;
                 }

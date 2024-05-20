@@ -12,13 +12,14 @@ public class EnemyAIv2 : MonoBehaviour
     public Animator _AnimationZombi;
 
     private bool _isPlayerNoticed;
+    private bool _Agresivni = false;
 
     public float viewAngle;
     public float timerDlaPublici;
     public float timerPatrylDlaPublici;
     public float damage;
     public float spead;
-    public bool NugnoPatrylirovanie;
+    public bool NugnoPatrylirovanie = false;
 
     private float timer;
     private float timerPatryl;
@@ -27,7 +28,21 @@ public class EnemyAIv2 : MonoBehaviour
     private void Start()
     {
         InitComponentLinks();
+        FindPlayer();
+
     }
+
+    private void FindPlayer()
+    {
+        player = FindObjectOfType<PeredvizhenieIgroka>();
+        _playerHealth = FindObjectOfType<PlayerHealth>();
+    }
+
+    public void InitEnemyLinks(bool agro)
+    {
+        _Agresivni = agro;
+    }
+
     private void Update()
     {
         NoticePlayerUpdate();
@@ -91,7 +106,7 @@ public class EnemyAIv2 : MonoBehaviour
     }
     private void ChaseUpdate()
     {
-        if (_isPlayerNoticed)
+        if (_isPlayerNoticed || _Agresivni)
         {
             _navMeshAgent.destination = player.transform.position;
         }

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7056132223393652905}
   - component: {fileID: 1237294125883660196}
   - component: {fileID: 5211284876873269724}
+  - component: {fileID: 2090912688702014183}
   m_Layer: 0
   m_Name: Zombi1
   m_TagString: Untagged
@@ -46,16 +47,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5dc33f1491011d4fb7b3190e4255332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  patrolPoints: []
-  player: {fileID: 8289962147778712277, guid: 460aed7093b7d40438ba61511ac751f6, type: 3}
-  _playerHealth: {fileID: 4874248945297727947, guid: 460aed7093b7d40438ba61511ac751f6,
-    type: 3}
+  patrolPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  player: {fileID: 0}
+  _playerHealth: {fileID: 0}
   _AnimationZombi: {fileID: 8744798067951770819}
   viewAngle: 60
   timerDlaPublici: 6
   timerPatrylDlaPublici: 5
-  damage: 0
-  spead: 0
+  damage: 25
+  spead: 2.5
   NugnoPatrylirovanie: 0
 --- !u!195 &1237294125883660196
 NavMeshAgent:
@@ -67,7 +70,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 2.5
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -93,6 +96,19 @@ CapsuleCollider:
   m_Height: 2.1
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &2090912688702014183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1263794156885590097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20fe69f57b54f664784f1de3e6f7e59b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hp: 100
 --- !u!95 &8744798067951770819
 Animator:
   serializedVersion: 3
@@ -102,7 +118,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7128243746575658989}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: c7bcd5308904c224493eb8fe9bcce824, type: 3}
   m_Controller: {fileID: 9100000, guid: 5b4e75ca98f0c7e40b7ed52c12da62c2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
