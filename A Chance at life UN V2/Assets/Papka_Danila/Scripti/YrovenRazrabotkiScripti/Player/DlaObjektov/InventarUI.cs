@@ -60,7 +60,7 @@ public class InventarUI : MonoBehaviour
         _PovorotCameri.enabled = true;
         if (DomGG == false)
         {
-            _Strelba.enabled = false;
+            _Strelba.enabled = true;
         }
     }
     public void Veshi()

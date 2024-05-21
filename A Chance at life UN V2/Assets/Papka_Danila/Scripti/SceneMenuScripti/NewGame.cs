@@ -20,6 +20,14 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetInt("ColvoMediumAptechek", 0);
         PlayerPrefs.SetInt("ColvoSmalAptechek", 0);
         PlayerPrefs.SetFloat("ColvoAptechek", 0);
+        PlayerPrefs.SetInt("Sostoianie" + 1, 0);
+        PlayerPrefs.SetInt("Sostoianie" + 2, 0);
+        PlayerPrefs.SetInt("Sostoianie" + 3, 0);
+        PlayerPrefs.SetInt("Sostoianie" + 4, 0);
+        PlayerPrefs.SetInt("Sostoianie" + 5, 0);
+        PlayerPrefs.SetFloat("ColvoToplivaInBochke" + 1, 50);
+        PlayerPrefs.SetFloat("ColvoToplivaInBochke" + 2, 50);
+        PlayerPrefs.SetFloat("ColvoToplivaInBochke" + 3, 50);
         SceneManager.LoadScene(1);
     }
 }

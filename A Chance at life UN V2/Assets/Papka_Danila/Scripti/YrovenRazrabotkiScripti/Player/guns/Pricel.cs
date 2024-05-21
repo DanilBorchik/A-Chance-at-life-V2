@@ -25,11 +25,13 @@ public class Pricel : MonoBehaviour
     }
     private void RayRay()
     {
-        var ray = CameraLink.ViewportPointToRay(new Vector3(0.5f, 0.55f, 0));
+        var ray = CameraLink.ViewportPointToRay(new Vector3(0.5f, 0.55f, 3));
+        Vector3 shotPosition = ray.GetPoint(2.6f);
+        Ray shotRay = new Ray(shotPosition, ray.direction);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(shotRay, out hit, 100f))
         {
-            if(hit.collider.gameObject != player.gameObject)
+            if(hit.collider.gameObject != player.gameObject && !hit.collider.isTrigger)
             {
                 targetPoint.position = hit.point;
             }

@@ -14,6 +14,8 @@ public class PeremeshenieNaDrygyuLoky : MonoBehaviour
     private bool _isPaused = false;
     private bool _OnVTrigere = false;
     private bool _Ne = false;
+    private bool fortimer;
+    private float timerFor_OnVTrigere;
 
     private void Update()
     {
@@ -28,6 +30,16 @@ public class PeremeshenieNaDrygyuLoky : MonoBehaviour
                 PauseGame();
             }
         }
+        if (fortimer == true)
+        {
+            timerFor_OnVTrigere += Time.deltaTime;
+        }
+        if (timerFor_OnVTrigere > 0.1f)
+        {
+            _OnVTrigere = false;
+            fortimer = false;
+            timerFor_OnVTrigere = 0;
+        }
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -39,6 +51,7 @@ public class PeremeshenieNaDrygyuLoky : MonoBehaviour
                 _isPaused = true;
             }
             _OnVTrigere = true;
+            fortimer = false;
         }
     }
     public void OnTriggerExit(Collider other)
@@ -48,7 +61,7 @@ public class PeremeshenieNaDrygyuLoky : MonoBehaviour
         {
             _isPaused = false;
             _Ne = false;
-            _OnVTrigere = false;
+            fortimer = true;
         }
     }
     public void loadSceny()

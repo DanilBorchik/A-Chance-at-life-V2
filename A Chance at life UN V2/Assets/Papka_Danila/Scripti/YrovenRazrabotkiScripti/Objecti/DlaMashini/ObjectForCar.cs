@@ -8,11 +8,36 @@ public class ObjectForCar : MonoBehaviour
     public GameObject _UIVzaimodeistviaFalse;
 
     public int TypeObject;
+    public bool podnal;
+    public int num;
 
     private int ColvoShin;
     private int ColvoKanistr;
+    private int sostoianie;
 
     public GameObject _Object;
+
+    private void Start()
+    {
+        sostoianie = PlayerPrefs.GetInt("Sostoianie" + num, sostoianie);
+        if (sostoianie == 1)
+        {
+            _Object.SetActive(false);
+        }
+    }
+    private void Update()
+    {
+        if (podnal == true)
+        {
+            sostoianie = 1;
+            PlayerPrefs.SetInt("Sostoianie" + num, sostoianie);
+            podnal = false;
+        }
+        if (sostoianie == 1)
+        {
+            _Object.SetActive(false);
+        }
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -30,7 +55,7 @@ public class ObjectForCar : MonoBehaviour
                         _Inventar.ColvoShin += 1;
                         ColvoShin = _Inventar.ColvoShin;
                         PlayerPrefs.SetInt("ColvoShin", ColvoShin);
-                        Destroy(_Object);
+                        podnal = true;
                     }
                 }
                 else
@@ -48,7 +73,7 @@ public class ObjectForCar : MonoBehaviour
                         _Inventar.ColvoKanistr += 1;
                         ColvoKanistr = _Inventar.ColvoKanistr;
                         PlayerPrefs.SetInt("ColvoKanistr", ColvoKanistr);
-                        Destroy(_Object);
+                        podnal = true;
                     }
                 }
                 else

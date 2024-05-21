@@ -197,6 +197,7 @@ MonoBehaviour:
   _pausePanel: {fileID: 4008048245951114323}
   _Strelba: {fileID: 9097627580745876924}
   _PovorotCameri: {fileID: 2327840386104223704}
+  DomGG: 0
 --- !u!114 &2442866494803036452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -212,16 +213,16 @@ MonoBehaviour:
   ColvoShin: 0
   ColvoKanistr: 0
   ColvoTopliva: 0
-  MaxTopliva: 50
+  MaxTopliva: 51
   _VsegoPatron: 0
-  _Patroni: 0
+  _Patroni: 40
   _MaxPatroni: 70
   _PatroniVstvole: 7
-  _colvoAptechek: 0
+  _colvoAptechek: 1
   _MaxColvoAptechek: 3
   _colvoBigAptechek: 0
   _colvoMediumAptechek: 0
-  _colvoSmalAptechek: 0
+  _colvoSmalAptechek: 2
   ColvoToplivaTransform: {fileID: 819138512073675227}
   ToplivoBar: {fileID: 4079754152291215642}
   _PatroniRectTransform: {fileID: 1006111179376309735}
@@ -256,6 +257,7 @@ MonoBehaviour:
   _InventarScript: {fileID: 2442866494803036452}
   _Strelba: {fileID: 9097627580745876924}
   _PovorotCameri: {fileID: 2327840386104223704}
+  DomGG: 0
 --- !u!1 &1566458710280162315
 GameObject:
   m_ObjectHideFlags: 0
@@ -674,7 +676,7 @@ PrefabInstance:
     - target: {fileID: 981220190629162606, guid: 4716f2e43ed3d0649a673faaea879f6e,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1375709159423532381, guid: 4716f2e43ed3d0649a673faaea879f6e,
         type: 3}

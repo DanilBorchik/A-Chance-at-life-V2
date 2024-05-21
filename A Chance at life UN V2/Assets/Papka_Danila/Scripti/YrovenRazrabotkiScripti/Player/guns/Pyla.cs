@@ -26,8 +26,12 @@ public class Pyla : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        var spawner = other.gameObject.GetComponent<SpawnZombi>();
         _Popal(other);
-        DestroyPyly();
+        if (!spawner)
+        {
+            DestroyPyly();
+        }
     }
     private void _Popal(Collider other)
     {

@@ -94,7 +94,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 2, z: 5}
+  m_Size: {x: 5, y: 4, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &8550327758109526270
 MonoBehaviour:
@@ -108,9 +108,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4c1dd39596e53b48a63b2468e32fe46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 60
+  Speed: 80
   lifetime: 10
-  damage: 20
+  damage: 35
   graviti: 2
 --- !u!54 &4713222489658108894
 Rigidbody:

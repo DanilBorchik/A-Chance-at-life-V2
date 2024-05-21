@@ -6,10 +6,30 @@ public class ZapravkaCanistri : MonoBehaviour
 {
     public float ColvoTopliva;
 
+    public bool pysto;
+    public int Number;
+
     public GameObject UIvzaimodeistvie;
     public GameObject UIvzaimodeistvieFalse;
     public GameObject UIvzaimodeistvieCanFalse;
     public GameObject UICanPerepolneno;
+
+    private void Start()
+    {
+        ColvoTopliva = PlayerPrefs.GetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
+        if (ColvoTopliva < 0.3f)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+    private void Update()
+    {
+        if (pysto == true)
+        {
+            PlayerPrefs.SetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
+            pysto = false;
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
@@ -40,6 +60,10 @@ public class ZapravkaCanistri : MonoBehaviour
                         {
                             _Inventar.Napolnenie(5);
                             ColvoTopliva -= 5 * Time.deltaTime;
+                        }
+                        else
+                        {
+                            pysto = true;
                         }
                     }
                 }
