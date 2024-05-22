@@ -19,7 +19,7 @@ public class ObjectForCar : MonoBehaviour
 
     private void Start()
     {
-        sostoianie = PlayerPrefs.GetInt("Sostoianie" + num, sostoianie);
+        //sostoianie = PlayerPrefs.GetInt("Sostoianie" + num, sostoianie);
         if (sostoianie == 1)
         {
             _Object.SetActive(false);

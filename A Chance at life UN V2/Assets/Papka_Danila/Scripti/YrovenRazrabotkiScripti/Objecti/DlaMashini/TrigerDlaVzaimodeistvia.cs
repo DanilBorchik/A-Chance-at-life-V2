@@ -49,6 +49,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
                 }
             }
         }
+        _Car.ColvoToplivaMashini = ColvoToplivaMashini;
     }
 
     private void OnTriggerStay(Collider other)
@@ -101,7 +102,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             if (DlaChegoTriger == 2)
             {
                 _UIVzaimodeistviaV2.SetActive(false);
-                _UIKanistriNet.SetActive(false);
+                //_UIKanistriNet.SetActive(false);
             }
         }
     }

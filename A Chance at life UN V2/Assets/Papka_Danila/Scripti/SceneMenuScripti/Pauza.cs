@@ -9,19 +9,25 @@ public class Pauza : MonoBehaviour
     public Strelba _Strelba;
     public PovorotCameri _PovorotCameri;
 
+    public Car _Car;
+
     bool _isPaused = false;
     public bool DomGG;
+    public bool ForVin;
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (ForVin == false)
         {
-            if (_isPaused)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                ResumeGame();
-            }
-            else
-            {
-                PauseGame();
+                if (_isPaused)
+                {
+                    ResumeGame();
+                }
+                else
+                {
+                    PauseGame();
+                }
             }
         }
     }
@@ -37,6 +43,7 @@ public class Pauza : MonoBehaviour
         {
             _Strelba.enabled = false;
         }
+
     }
 
     public void ResumeGame()
@@ -47,6 +54,10 @@ public class Pauza : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         _PovorotCameri.enabled = true;
+        if (ForVin == true)
+        {
+            _Car.Otmena = true;
+        }
         if (DomGG == false)
         {
             _Strelba.enabled = true;

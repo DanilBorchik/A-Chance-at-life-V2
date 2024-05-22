@@ -16,11 +16,11 @@ public class ZapravkaCanistri : MonoBehaviour
 
     private void Start()
     {
-        ColvoTopliva = PlayerPrefs.GetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
-        if (ColvoTopliva < 0.3f)
-        {
-            gameObject.SetActive(false);
-        }
+       //ColvoTopliva = PlayerPrefs.GetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
+        //if (ColvoTopliva < 0.3f)
+        //{
+            //gameObject.SetActive(false);
+        //}
     }
     private void Update()
     {
