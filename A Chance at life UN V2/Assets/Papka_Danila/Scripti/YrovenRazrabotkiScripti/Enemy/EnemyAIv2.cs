@@ -7,7 +7,7 @@ public class EnemyAIv2 : MonoBehaviour
 {
     public List<Transform> patrolPoints;
     public PeredvizhenieIgroka player;
-    private NavMeshAgent _navMeshAgent;
+    public NavMeshAgent _navMeshAgent;
     public PlayerHealth _playerHealth;
     public Animator _AnimationZombi;
 
@@ -24,7 +24,7 @@ public class EnemyAIv2 : MonoBehaviour
     private float timer;
     private float timerPatryl;
     private float timerAngle;
-    private bool attaka;
+    public bool attaka;
 
     private void Start()
     {
@@ -83,6 +83,7 @@ public class EnemyAIv2 : MonoBehaviour
         {
             _AnimationZombi.SetInteger("Attack", 0);
             _AnimationZombi.SetBool("BoolAttack", false);
+            if (GetComponent<EnemyHealth>().PopaliForAnimation == false)
             _navMeshAgent.speed = spead;
         }
     }

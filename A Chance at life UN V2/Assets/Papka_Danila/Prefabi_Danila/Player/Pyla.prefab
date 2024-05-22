@@ -112,6 +112,7 @@ MonoBehaviour:
   lifetime: 10
   damage: 35
   graviti: 2
+  FxBlood: {fileID: 4400157151706867258, guid: eeea6aba67f4f944381e05c7c14949a3, type: 3}
 --- !u!54 &4713222489658108894
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -9,6 +9,8 @@ public class Pyla : MonoBehaviour
     public float damage = 20;
     public float graviti = 5.8f;
 
+    public GameObject FxBlood;
+
     private float _gravi = 0;
     void Start()
     {
@@ -40,6 +42,7 @@ public class Pyla : MonoBehaviour
             if (enemyHealth != null)
             {
                enemyHealth.DealDamage(damage);
+                Instantiate(FxBlood, transform.position, transform.rotation);
             }
             var stateEnemyHealth = other.gameObject.GetComponent<StateEnemyHealth>();
             if (stateEnemyHealth != null)
