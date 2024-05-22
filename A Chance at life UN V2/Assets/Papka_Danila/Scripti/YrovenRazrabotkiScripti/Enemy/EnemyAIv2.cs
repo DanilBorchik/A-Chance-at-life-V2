@@ -23,6 +23,7 @@ public class EnemyAIv2 : MonoBehaviour
 
     private float timer;
     private float timerPatryl;
+    private float timerAngle;
     private bool attaka;
 
     private void Start()
@@ -54,6 +55,20 @@ public class EnemyAIv2 : MonoBehaviour
         AtackUpdate();
         AnimaciaDvizhenia();
         AnimaciaAtacki();
+        TimerVorAngle();
+    }
+
+    private void TimerVorAngle()
+    {
+        if (viewAngle > 90)
+        {
+            timerAngle += Time.deltaTime;
+            if (timerAngle > 2)
+            {
+                viewAngle = 90;
+                timerAngle = 0;
+            }
+        }
     }
 
     private void AnimaciaAtacki()
