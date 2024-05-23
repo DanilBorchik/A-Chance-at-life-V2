@@ -14,6 +14,8 @@ public class EnemyAIv2 : MonoBehaviour
     private bool _isPlayerNoticed;
     private bool _Agresivni = false;
 
+    public float attackDistance = 1;
+
     public float viewAngle;
     public float timerDlaPublici;
     public float timerPatrylDlaPublici;
@@ -21,7 +23,7 @@ public class EnemyAIv2 : MonoBehaviour
     public float spead;
     public bool NugnoPatrylirovanie = false;
 
-    private float timer;
+    //private float timer;
     private float timerPatryl;
     private float timerAngle;
     public bool attaka;
@@ -100,6 +102,7 @@ public class EnemyAIv2 : MonoBehaviour
         }
     }
 
+
     private void NoticePlayerUpdate()
     {
         _isPlayerNoticed = false;
@@ -158,30 +161,41 @@ public class EnemyAIv2 : MonoBehaviour
     {
         if (_isPlayerNoticed)
         {
-            if (DistanciaIgroka() < 2f)
+            if(_navMeshAgent.remainingDistance <= (_navMeshAgent.stoppingDistance + attackDistance))
             {
-                timer += Time.deltaTime;
                 attaka = true;
-                if (timer >= timerDlaPublici)
-                {
-                    _playerHealth.DealDamage(damage);
-                    timer = 0f;
-                }
             }
-            else
-            {
-                attaka = false;
-                timer = 0;
-            }
-            float DistanciaIgroka()
-            {
-                return Vector3.Distance(transform.position, _playerHealth.transform.position);
-            }
+
+            //if (DistanciaIgroka() < 2f)
+            //{
+            //    timer += Time.deltaTime;
+             //   attaka = true;
+           //     if (timer >= timerDlaPublici)
+             //   {
+              //      _playerHealth.DealDamage(damage);
+             //       timer = 0f;
+            //    }
+           // }
+          //  else
+           // {
+            //    attaka = false;
+           //     timer = 0;
+           // }
+         //   float DistanciaIgroka()
+           // {
+            //    return Vector3.Distance(transform.position, _playerHealth.transform.position);
+          //  }
+       // }
+        //else
+       // {
+        //    attaka = false;
+         //   timer = 0;
         }
-        else
-        {
-            attaka = false;
-            timer = 0;
-        }
+    }
+    public void AttackDamage()
+    {
+        if (!_isPlayerNoticed) return;
+        if (_navMeshAgent.remainingDistance > (_navMeshAgent.stoppingDistance + attackDistance)) return;
+            _playerHealth.DealDamage(damage);
     }
 }
