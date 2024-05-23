@@ -10,6 +10,7 @@ public class EnemyAIv2 : MonoBehaviour
     public NavMeshAgent _navMeshAgent;
     public PlayerHealth _playerHealth;
     public Animator _AnimationZombi;
+    public AudioSource Ydar;
 
     private bool _isPlayerNoticed;
     private bool _Agresivni = false;
@@ -23,7 +24,7 @@ public class EnemyAIv2 : MonoBehaviour
     public float spead;
     public bool NugnoPatrylirovanie = false;
 
-    //private float timer;
+    private float timer;
     private float timerPatryl;
     private float timerAngle;
     public bool attaka;
@@ -86,7 +87,7 @@ public class EnemyAIv2 : MonoBehaviour
             _AnimationZombi.SetInteger("Attack", 0);
             _AnimationZombi.SetBool("BoolAttack", false);
             if (GetComponent<EnemyHealth>().PopaliForAnimation == false)
-            _navMeshAgent.speed = spead;
+                _navMeshAgent.speed = spead;
         }
     }
 
@@ -110,7 +111,7 @@ public class EnemyAIv2 : MonoBehaviour
         if (!_playerHealth.IsAlive()) return;
 
         var direction = player.transform.position - transform.position;
-        
+
         if (Vector3.Angle(transform.forward, direction) < viewAngle)
         {
             RaycastHit hit;
@@ -161,41 +162,42 @@ public class EnemyAIv2 : MonoBehaviour
     {
         if (_isPlayerNoticed)
         {
-            if(_navMeshAgent.remainingDistance <= (_navMeshAgent.stoppingDistance + attackDistance))
+            if (_navMeshAgent.remainingDistance <= (_navMeshAgent.stoppingDistance + attackDistance))
             {
                 attaka = true;
             }
 
-            //if (DistanciaIgroka() < 2f)
-            //{
-            //    timer += Time.deltaTime;
-             //   attaka = true;
-           //     if (timer >= timerDlaPublici)
-             //   {
-              //      _playerHealth.DealDamage(damage);
-             //       timer = 0f;
-            //    }
-           // }
-          //  else
-           // {
-            //    attaka = false;
-           //     timer = 0;
-           // }
-         //   float DistanciaIgroka()
-           // {
-            //    return Vector3.Distance(transform.position, _playerHealth.transform.position);
-          //  }
-       // }
-        //else
-       // {
-        //    attaka = false;
-         //   timer = 0;
+            if (DistanciaIgroka() < 1.3f)
+            {
+                timer += Time.deltaTime;
+                attaka = true;
+                if (timer >= timerDlaPublici)
+                {
+                    _playerHealth.DealDamage(damage);
+                    timer = 0f;
+                    Ydar.Play();
+                }
+            }
+            else
+            {
+                attaka = false;
+                timer = 0;
+            }
+            float DistanciaIgroka()
+            {
+                return Vector3.Distance(transform.position, _playerHealth.transform.position);
+            }
+        }
+        else
+        {
+            attaka = false;
+            timer = 0;
         }
     }
     public void AttackDamage()
     {
-        if (!_isPlayerNoticed) return;
-        if (_navMeshAgent.remainingDistance > (_navMeshAgent.stoppingDistance + attackDistance)) return;
-            _playerHealth.DealDamage(damage);
+        //if (!_isPlayerNoticed) return;
+        //if (_navMeshAgent.remainingDistance > (_navMeshAgent.stoppingDistance + attackDistance)) return;
+        //_playerHealth.DealDamage(damage);
     }
 }

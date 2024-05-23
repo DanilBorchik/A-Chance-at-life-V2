@@ -6,6 +6,8 @@ public class ZapravkaCanistri : MonoBehaviour
 {
     public float ColvoTopliva;
 
+    public Inventar _InventarForSound;
+
     public bool pysto;
     public int Number;
 
@@ -14,13 +16,15 @@ public class ZapravkaCanistri : MonoBehaviour
     public GameObject UIvzaimodeistvieCanFalse;
     public GameObject UICanPerepolneno;
 
+    private bool Nalivaem = false;
+
     private void Start()
     {
-       //ColvoTopliva = PlayerPrefs.GetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
-        //if (ColvoTopliva < 0.3f)
-        //{
-            //gameObject.SetActive(false);
-        //}
+        ColvoTopliva = PlayerPrefs.GetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
+        if (ColvoTopliva < 0.3f)
+        {
+            gameObject.SetActive(false);
+        }
     }
     private void Update()
     {
@@ -34,6 +38,8 @@ public class ZapravkaCanistri : MonoBehaviour
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
         var _Inventar = other.gameObject.GetComponent<Inventar>();
+        bool Active = false;
+        _InventarForSound = _Inventar;
         if (_PeredvizhenieIgroka != null)
         {
             if (_Inventar.ColvoKanistr != 0)
@@ -60,6 +66,12 @@ public class ZapravkaCanistri : MonoBehaviour
                         {
                             _Inventar.Napolnenie(5);
                             ColvoTopliva -= 5 * Time.deltaTime;
+                            Active = true;
+                            if (!Nalivaem)
+                            {
+                                Nalivaem = true;
+                                _InventarForSound.SoundForCanTrue();
+                            }
                         }
                         else
                         {
@@ -71,6 +83,14 @@ public class ZapravkaCanistri : MonoBehaviour
             else
             {
                 UIvzaimodeistvieCanFalse.SetActive(true);
+            }
+        }
+        if (!Active)
+        {
+            if (Nalivaem == true)
+            {
+                Nalivaem = false;
+                _InventarForSound.SoundForCanFalse();
             }
         }
     }
@@ -85,6 +105,8 @@ public class ZapravkaCanistri : MonoBehaviour
             UICanPerepolneno.SetActive(false);
             UIvzaimodeistvieFalse.SetActive(false);
             _Inventar.ToplivoBar.SetActive(false);
+            Nalivaem = false;
+            _InventarForSound.SoundForCanFalse();
         }
     }
 }

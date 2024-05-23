@@ -24,6 +24,13 @@ public class Inventar : MonoBehaviour
     public int _colvoMediumAptechek;
     public int _colvoSmalAptechek;
 
+    public AudioSource patroniSound;
+    public AudioSource Aptechki;
+    public AudioSource soundsForCar;
+    public AudioSource SoundCan;
+    public AudioSource Shoot;
+    public AudioSource Reload;
+
     public RectTransform ColvoToplivaTransform;
     public GameObject ToplivoBar;
     public RectTransform _PatroniRectTransform;
@@ -57,6 +64,19 @@ public class Inventar : MonoBehaviour
         Perezoradka();
         IspolzovanieAptechek();
         UborkaLishnih();
+    }
+    public void SoundForCanTrue()
+    {
+        SoundCan.Play();
+    }
+    public void SoundForCanFalse()
+    {
+        SoundCan.Stop();
+    }
+
+    public void StartSoundForObjectCar()
+    {
+        soundsForCar.Play();
     }
 
     private void IspolzovanieAptechek()
@@ -159,12 +179,17 @@ public class Inventar : MonoBehaviour
             ProverkaPistolPatron();
             PlayerPrefs.SetInt("ColvoPatron", _Patroni);
             DrawPatroniBar();
+            if (_Patroni > 0)
+            {
+                Reload.Play();
+            }
         }
     }
     public void AddPatroni(int colvo)
     {   
         _Patroni += colvo;
         PlayerPrefs.SetInt("ColvoPatron", _Patroni);
+        patroniSound.Play();
         ProverkaPistolPatron();
     }
     public void AddAptechki(int typeAptechki)
@@ -189,10 +214,12 @@ public class Inventar : MonoBehaviour
         }
         PlayerPrefs.SetFloat("ColvoAptechek", _colvoAptechek);
         ProverkaAptechek();
+        Aptechki.Play();
     }
     public void DealMinysPatroni()
     {
         _PatroniVstvole -= 1;
+        Shoot.Play();
         DrawPatroniBar();
     }
     private void DrawPatroniBar()

@@ -6,6 +6,7 @@ public class ObjectForCar : MonoBehaviour
 {
     public GameObject _UIVzaimodeistvia;
     public GameObject _UIVzaimodeistviaFalse;
+    public Inventar _InventarOnTriger;
 
     public int TypeObject;
     public bool podnal;
@@ -19,7 +20,7 @@ public class ObjectForCar : MonoBehaviour
 
     private void Start()
     {
-        //sostoianie = PlayerPrefs.GetInt("Sostoianie" + num, sostoianie);
+        sostoianie = PlayerPrefs.GetInt("Sostoianie" + num, sostoianie);
         if (sostoianie == 1)
         {
             _Object.SetActive(false);
@@ -32,6 +33,7 @@ public class ObjectForCar : MonoBehaviour
             sostoianie = 1;
             PlayerPrefs.SetInt("Sostoianie" + num, sostoianie);
             podnal = false;
+            _InventarOnTriger.StartSoundForObjectCar();
         }
         if (sostoianie == 1)
         {
@@ -43,6 +45,7 @@ public class ObjectForCar : MonoBehaviour
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();
         var _Inventar = other.gameObject.GetComponent<Inventar>();
+        _InventarOnTriger = _Inventar;
         if (_PeredvizhenieIgroka != null)
         {
             if (TypeObject == 1)

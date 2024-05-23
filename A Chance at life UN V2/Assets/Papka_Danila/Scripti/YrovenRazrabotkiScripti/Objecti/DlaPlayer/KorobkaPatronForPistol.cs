@@ -6,6 +6,7 @@ public class KorobkaPatronForPistol : MonoBehaviour
 {
     public int HowPatron;
     public GameObject Corobka;
+
     private void OnTriggerStay(Collider other)
     {
         var _PeredvizhenieIgroka = other.gameObject.GetComponent<PeredvizhenieIgroka>();

@@ -17,6 +17,11 @@ public class PeredvizhenieIgroka : MonoBehaviour
     private CharacterController _characterController;
     public Animator _animator;
     public Strelba _strelba;
+
+    public AudioSource Jump;
+    public AudioSource Run;
+
+    private bool _continues;
     void Start()
     {
         _characterController = GetComponent<CharacterController>();
@@ -66,6 +71,7 @@ public class PeredvizhenieIgroka : MonoBehaviour
             {
                 Prigok = true;
                 _animator.SetBool("Jump", true);
+                Jump.Play();    
             }
         }
         if (Prigok == true)
@@ -79,6 +85,14 @@ public class PeredvizhenieIgroka : MonoBehaviour
                 _characterController.height = 2f;
                 Prigok = false;
             }
+        }
+        if (_moveVector.sqrMagnitude > 0 && _characterController.isGrounded == true)
+        {
+            SoundWalkPlay();
+        }
+        else
+        {
+            SoundWalkStop();
         }
     }
     private void Pritazhenie()
@@ -96,5 +110,23 @@ public class PeredvizhenieIgroka : MonoBehaviour
                 _animator.SetBool("Jump", false);
             }
         }
+    }
+    private void SoundWalkPlay()
+    {
+        if (!_continues)
+        {
+            Run.Play();
+            _continues = true;
+        }
+
+    }
+    private void SoundWalkStop()
+    {
+        if (_continues)
+        {
+            Run.Stop();
+            _continues = false;
+        }
+
     }
 }

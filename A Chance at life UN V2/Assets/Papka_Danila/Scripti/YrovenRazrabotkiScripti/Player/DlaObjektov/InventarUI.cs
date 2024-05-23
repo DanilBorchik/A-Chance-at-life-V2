@@ -7,13 +7,17 @@ public class InventarUI : MonoBehaviour
 {
     [SerializeField] GameObject _Inventar;
     [SerializeField] GameObject _Veshi;
-    [SerializeField] GameObject _Tetrad;
+    [SerializeField] GameObject _Zadachi;
+    [SerializeField] GameObject _Zametki;
+    [SerializeField] List<GameObject> _ZametkiNum;
     [SerializeField] List<GameObject> _AmmoIcon;
     [SerializeField] List<GameObject> _HealsIcon;
     [SerializeField] TextMeshProUGUI _colvoPatronPistol;
     [SerializeField] TextMeshProUGUI _colvoBigAptechek;
     [SerializeField] TextMeshProUGUI _colvoMediumAptechek;
     [SerializeField] TextMeshProUGUI _colvoSmalAptechek;
+    [SerializeField] GameObject _GalochkaShini;
+    [SerializeField] GameObject _GalochkaToplivo;
 
     public Inventar _InventarScript;
     public Strelba _Strelba;
@@ -22,6 +26,8 @@ public class InventarUI : MonoBehaviour
     public bool DomGG;
 
     private bool _InventarVkL = false;
+
+    private int Num = 0;
 
     private void Update()
     {
@@ -36,6 +42,14 @@ public class InventarUI : MonoBehaviour
                 PauseGame();
             }
         }
+    }
+    public void ShiniTrue()
+    {
+        _GalochkaShini.SetActive(true);
+    }
+    public void ToplivoTrue()
+    {
+        _GalochkaToplivo.SetActive(true);
     }
     public void PauseGame()
     {
@@ -66,13 +80,36 @@ public class InventarUI : MonoBehaviour
     public void Veshi()
     {
         _Veshi.SetActive(true);
-        _Tetrad.SetActive(false);
+        _Zadachi.SetActive(false);
+        _Zametki.SetActive(false);
     }
-    public void Tetrad()
+    public void Zadachi()
     {
         _Veshi.SetActive(false);
-        _Tetrad.SetActive(true);
+        _Zadachi.SetActive(true);
+        _Zametki.SetActive(false);
     }
+    public void Zametki()
+    {
+        _Veshi.SetActive(false);
+        _Zadachi.SetActive(false);
+        _Zametki.SetActive(true);
+    }
+    public void ZametkiList()
+    {
+        Num += 1;
+        if (Num < _ZametkiNum.Count)
+        {
+            _ZametkiNum[Num].SetActive(true);
+            _ZametkiNum[Num - 1].SetActive(false);
+        }
+        else
+        {
+            Num = 0;
+            _ZametkiNum[Num].SetActive(true);
+            _ZametkiNum[_ZametkiNum.Count - 1].SetActive(false);
+        }
+    }    
     public void _YpravlenieIcon(int razdel, int type, bool sostoianie, int num)
     {
         if (razdel == 1)

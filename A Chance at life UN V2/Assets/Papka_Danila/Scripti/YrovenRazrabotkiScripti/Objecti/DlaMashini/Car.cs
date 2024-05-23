@@ -7,6 +7,7 @@ public class Car : MonoBehaviour
     public List<GameObject> tyre;
     public List<GameObject> tyreTriger;
     public TrigerDlaVzaimodeistvia Toplivo;
+    public InventarUI _InventarUI;
 
     public PovorotCameri _PovorotCameri;
 
@@ -36,6 +37,19 @@ public class Car : MonoBehaviour
             ToplivoVin();
         }
         Vin();
+        Galochki();
+    }
+
+    private void Galochki()
+    {
+        if (ColvoToplivaMashini >= 150)
+        {
+            _InventarUI.ToplivoTrue();
+        }
+        if (_tyrebool == 1 && _tyrebool1 == 1 && _tyrebool2 == 1 && _tyrebool3 == 1)
+        {
+            _InventarUI.ShiniTrue();
+        }
     }
 
     private void Vin()

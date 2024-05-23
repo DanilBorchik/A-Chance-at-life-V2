@@ -8,6 +8,7 @@ public class Strelba : MonoBehaviour
     public PeredvizhenieIgroka _PeredvizhenieIgroka;
     public Inventar _Inventar;
     public Animator _animator;
+    public AudioSource ShootFalse;
 
     private int NomerAnimaciiStrelbi;
     public bool Strelbi;
@@ -66,6 +67,10 @@ public class Strelba : MonoBehaviour
                 timerStrelbi = 0;
                 AnimationStrelbi = true;
                 _animator.SetBool("ShootingBool", true);
+            }
+            else
+            {
+                ShootFalse.Play();
             }
         }
         if (Input.GetMouseButtonDown(1))

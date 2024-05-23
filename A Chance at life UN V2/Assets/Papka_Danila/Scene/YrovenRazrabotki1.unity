@@ -270,9 +270,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2155615203489573038, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2924467148601322519, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3713160713283663071, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6577132259098998495, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
       propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6634282318894915009, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -611,6 +631,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 322f8a2ecff98c24fa4889f82254d85c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1321498937 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1230560854461434376, guid: 460aed7093b7d40438ba61511ac751f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 651903492}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c88c0edf5594874bb42ed602163c7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1374407284
@@ -1068,6 +1100,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1983966207}
     - target: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b, type: 3}
+      propertyPath: _InventarUI
+      value: 
+      objectReference: {fileID: 1321498937}
+    - target: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: _PovorotCameri
       value: 
       objectReference: {fileID: 608095354}
@@ -1306,6 +1342,16 @@ PrefabInstance:
     - target: {fileID: 1263794156885590097, guid: 1c342ac8ef5205348835bf67e21dc98c,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589542928041204130, guid: 1c342ac8ef5205348835bf67e21dc98c,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2589542928041204130, guid: 1c342ac8ef5205348835bf67e21dc98c,
+        type: 3}
+      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7056132223393652905, guid: 1c342ac8ef5205348835bf67e21dc98c,
@@ -1318,6 +1364,11 @@ PrefabInstance:
       propertyPath: _playerHealth
       value: 
       objectReference: {fileID: 1729294298}
+    - target: {fileID: 7056132223393652905, guid: 1c342ac8ef5205348835bf67e21dc98c,
+        type: 3}
+      propertyPath: timerDlaPublici
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8032643203744523086, guid: 1c342ac8ef5205348835bf67e21dc98c,
         type: 3}
       propertyPath: m_RootOrder
