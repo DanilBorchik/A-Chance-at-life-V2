@@ -28,6 +28,7 @@ public class NewGame : MonoBehaviour
         PlayerPrefs.SetFloat("ColvoToplivaInBochke" + 1, 50);
         PlayerPrefs.SetFloat("ColvoToplivaInBochke" + 2, 50);
         PlayerPrefs.SetFloat("ColvoToplivaInBochke" + 3, 50);
+        PlayerPrefs.SetInt("VinSave", 0);
         SceneManager.LoadScene(1);
     }
 }

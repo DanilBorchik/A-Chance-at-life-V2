@@ -568,7 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b66e99390dcfbe4c8ec8d0b6dc00cc9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Car: {fileID: 0}
+  _Car: {fileID: 769254627}
   _UIVzaimodeistvia: {fileID: 2659293096755616666}
   _UIVzaimodeistviaV2: {fileID: 1068780070653255097}
   _UIKanistriNet: {fileID: 0}
@@ -600,7 +600,7 @@ MonoBehaviour:
   - {fileID: 911745367}
   Toplivo: {fileID: 3027055183135968101}
   _PovorotCameri: {fileID: 0}
-  VinUI: {fileID: 0}
+  VinUI: {fileID: 1698328956257829664}
   ColvoToplivaMashini: 0
   Otmena: 0
 --- !u!1001 &298046249426089080

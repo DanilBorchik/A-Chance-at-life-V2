@@ -19,6 +19,7 @@ public class Car : MonoBehaviour
     private int _tyrebool2 = 0;
     private int _tyrebool3 = 0;
 
+    private int VinSave;
     private int VinSchet;
     private bool a;
     private bool b;
@@ -29,8 +30,11 @@ public class Car : MonoBehaviour
 
     private void Update()
     {
-        ColesaVin();
-        ToplivoVin();
+        if (VinSave == 0)
+        {
+            ColesaVin();
+            ToplivoVin();
+        }
         Vin();
     }
 
@@ -45,6 +49,8 @@ public class Car : MonoBehaviour
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
                 _PovorotCameri.enabled = false;
+                VinSave = 1;
+                PlayerPrefs.SetInt("VinSave", VinSave);
             }
         }
     }
@@ -55,7 +61,7 @@ public class Car : MonoBehaviour
         {
             if (a == false)
             {
-                //VinSchet += 1;
+                VinSchet += 1;
                 a = true;
             }
         }
@@ -64,44 +70,44 @@ public class Car : MonoBehaviour
     private void ColesaVin()
     {
         if (b == false)
-        { 
-            
+        {
+            if (_tyrebool == 1)
+            {
+                tyre[0].SetActive(true);
+                tyreTriger[0].SetActive(false);
+                VinSchet += 1;
+                b = true;
+            }
         }
         if (c == false)
         {
-
+            if (_tyrebool1 == 1)
+            {
+                tyre[1].SetActive(true);
+                tyreTriger[1].SetActive(false);
+                VinSchet += 1;
+                c = true;
+            }
         }
         if (d == false)
         {
-
+            if (_tyrebool2 == 1)
+            {
+                tyre[2].SetActive(true);
+                tyreTriger[2].SetActive(false);
+                VinSchet += 1;
+                d = true;
+            }
         }
         if (f == false)
         {
-
-        }
-        if (_tyrebool == 1)
-        {
-            tyre[0].SetActive(true);
-            tyreTriger[0].SetActive(false);
-            //VinSchet += 1;
-        }
-        if (_tyrebool1 == 1)
-        {
-            tyre[1].SetActive(true);
-            tyreTriger[1].SetActive(false);
-            //VinSchet += 1;
-        }
-        if (_tyrebool2 == 1)
-        {
-            tyre[2].SetActive(true);
-            tyreTriger[2].SetActive(false);
-           //VinSchet += 1;
-        }
-        if (_tyrebool3 == 1)
-        {
-            tyre[3].SetActive(true);
-            tyreTriger[3].SetActive(false);
-            //VinSchet += 1;
+            if (_tyrebool3 == 1)
+            {
+                tyre[3].SetActive(true);
+                tyreTriger[3].SetActive(false);
+                VinSchet += 1;
+                f = true;
+            }
         }
     }
 
@@ -112,6 +118,7 @@ public class Car : MonoBehaviour
 
     private void SaveProgres()
     {
+        VinSave = PlayerPrefs.GetInt("VinSave", VinSave);
         _tyrebool = PlayerPrefs.GetInt("tyrebool", _tyrebool);
         _tyrebool1 = PlayerPrefs.GetInt("tyrebool1", _tyrebool1);
         _tyrebool2 = PlayerPrefs.GetInt("tyrebool2", _tyrebool2);
