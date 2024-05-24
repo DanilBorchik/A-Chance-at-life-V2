@@ -167,7 +167,7 @@ public class EnemyAIv2 : MonoBehaviour
                 attaka = true;
             }
 
-            if (DistanciaIgroka() < 1.3f)
+            if (DistanciaIgroka() < 1.5f)
             {
                 timer += Time.deltaTime;
                 attaka = true;

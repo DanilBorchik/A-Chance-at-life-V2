@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public float _Patroni;
     public RectTransform _hpRectTransform;
     public RectTransform _PatroniRectTransform;
+    public GameObject Players;
 
     public Pricel pricel;
     public GameObject gameplayUI;
@@ -25,7 +26,13 @@ public class PlayerHealth : MonoBehaviour
     {
         MaxChegoto();
     }
-
+    private void Update()
+    {
+        if (_OnYmer == true)
+        {
+            Invoke("toMainMenu", 3);
+        }
+    }
     private void MaxChegoto()
     {
         _maxhp = _hp;
@@ -69,8 +76,14 @@ public class PlayerHealth : MonoBehaviour
         pricel.GetComponent<Pricel>().enabled = false;
         GetComponent<PovorotCameri>().enabled = false;
 
+        Players.SetActive(false);
         //DeadSound.Play();
         _OnYmer = true;
+    }
+    public void toMainMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        _OnYmer = false;
     }
     private void DrawHealthBar()
     {

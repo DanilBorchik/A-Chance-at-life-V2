@@ -210,6 +210,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 519158952688510779, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1566031582267580538, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1566458709720671682, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
       propertyPath: m_Name
@@ -275,6 +285,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2347308616179299431, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2924467148601322519, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
       propertyPath: m_RootOrder
@@ -284,6 +299,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4874248945297727947, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: Players
+      value: 
+      objectReference: {fileID: 1739733500}
+    - target: {fileID: 6577132259098998467, guid: 460aed7093b7d40438ba61511ac751f6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6577132259098998495, guid: 460aed7093b7d40438ba61511ac751f6,
         type: 3}
@@ -1327,6 +1352,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87b09f44e5073e24e9536afa849d7491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1739733500 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1566031582267580538, guid: 460aed7093b7d40438ba61511ac751f6,
+    type: 3}
+  m_PrefabInstance: {fileID: 651903492}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1751317251
 PrefabInstance:
   m_ObjectHideFlags: 0
