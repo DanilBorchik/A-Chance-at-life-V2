@@ -64,6 +64,10 @@ public class Inventar : MonoBehaviour
         Perezoradka();
         IspolzovanieAptechek();
         UborkaLishnih();
+        if (ColvoTopliva < 0)
+        {
+            ColvoTopliva = 0;
+        }
     }
     public void SoundForCanTrue()
     {

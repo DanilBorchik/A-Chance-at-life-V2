@@ -646,18 +646,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 297702a0263a8d44392b3ccf77e5e03a, type: 3}
---- !u!114 &1225305429 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1646740036}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 322f8a2ecff98c24fa4889f82254d85c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1321498937 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1230560854461434376, guid: 460aed7093b7d40438ba61511ac751f6,
@@ -1113,17 +1101,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 383897395, guid: 23536a199e760734d92134f04df4a71b, type: 3}
-      propertyPath: inventar
-      value: 
-      objectReference: {fileID: 1729294303}
-    - target: {fileID: 383897395, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: _Inventar
       value: 
       objectReference: {fileID: 1729294303}
-    - target: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b, type: 3}
-      propertyPath: VinUI
-      value: 
-      objectReference: {fileID: 1983966207}
     - target: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: _InventarUI
       value: 
@@ -1132,20 +1112,8 @@ PrefabInstance:
       propertyPath: _PovorotCameri
       value: 
       objectReference: {fileID: 608095354}
-    - target: {fileID: 769254627, guid: 23536a199e760734d92134f04df4a71b, type: 3}
-      propertyPath: tyre.Array.data[1]
-      value: 
-      objectReference: {fileID: 1649652775}
-    - target: {fileID: 911745369, guid: 23536a199e760734d92134f04df4a71b, type: 3}
-      propertyPath: inventar
-      value: 
-      objectReference: {fileID: 1729294303}
     - target: {fileID: 911745369, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: _Inventar
-      value: 
-      objectReference: {fileID: 1729294303}
-    - target: {fileID: 1070430525, guid: 23536a199e760734d92134f04df4a71b, type: 3}
-      propertyPath: inventar
       value: 
       objectReference: {fileID: 1729294303}
     - target: {fileID: 1070430525, guid: 23536a199e760734d92134f04df4a71b, type: 3}
@@ -1153,57 +1121,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1729294303}
     - target: {fileID: 1999674486, guid: 23536a199e760734d92134f04df4a71b, type: 3}
-      propertyPath: inventar
-      value: 
-      objectReference: {fileID: 1729294303}
-    - target: {fileID: 1999674486, guid: 23536a199e760734d92134f04df4a71b, type: 3}
       propertyPath: _Inventar
       value: 
       objectReference: {fileID: 1729294303}
-    - target: {fileID: 377284954243459158, guid: 23536a199e760734d92134f04df4a71b,
+    - target: {fileID: 2797656593924063887, guid: 23536a199e760734d92134f04df4a71b,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 800576242181338504, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: DomGG
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 800576242181338504, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: _PovorotCameri
-      value: 
-      objectReference: {fileID: 608095354}
-    - target: {fileID: 1698328956257829664, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1821745924493148009, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2100373545771801303, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3027055183135968101, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: _Car
-      value: 
-      objectReference: {fileID: 1225305429}
-    - target: {fileID: 3027055183135968101, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: _Inventar
-      value: 
-      objectReference: {fileID: 1729294303}
-    - target: {fileID: 3641511317468973866, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3641939213522334728, guid: 23536a199e760734d92134f04df4a71b,
         type: 3}
@@ -1265,22 +1189,7 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5434475388793514044, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7014787042012458527, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7086439592801481924, guid: 23536a199e760734d92134f04df4a71b,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7273150261808522236, guid: 23536a199e760734d92134f04df4a71b,
+    - target: {fileID: 5847953887056375958, guid: 23536a199e760734d92134f04df4a71b,
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
@@ -1292,12 +1201,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23536a199e760734d92134f04df4a71b, type: 3}
---- !u!1 &1649652775 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2100373545771801303, guid: 23536a199e760734d92134f04df4a71b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1646740036}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1684697928 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1355535989010746, guid: 2fc01610ec566294893d91f8d8b04a32,
@@ -1600,12 +1503,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 297702a0263a8d44392b3ccf77e5e03a, type: 3}
---- !u!1 &1983966207 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1698328956257829664, guid: 23536a199e760734d92134f04df4a71b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1646740036}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2032945124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2244,6 +2141,11 @@ PrefabInstance:
     - target: {fileID: 5887444373965208873, guid: d6fd19577f1c25b48bec685b8807063d,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5887444373965208874, guid: d6fd19577f1c25b48bec685b8807063d,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

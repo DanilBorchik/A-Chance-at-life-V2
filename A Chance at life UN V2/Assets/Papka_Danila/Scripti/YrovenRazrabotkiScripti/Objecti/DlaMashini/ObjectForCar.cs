@@ -33,7 +33,7 @@ public class ObjectForCar : MonoBehaviour
             sostoianie = 1;
             PlayerPrefs.SetInt("Sostoianie" + num, sostoianie);
             podnal = false;
-            _InventarOnTriger.StartSoundForObjectCar();
+            _InventarOnTriger.StartSoundForObjectCar(); 
         }
         if (sostoianie == 1)
         {

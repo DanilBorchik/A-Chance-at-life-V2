@@ -25,7 +25,7 @@ public class Pricel : MonoBehaviour
     }
     private void RayRay()
     {
-        var ray = CameraLink.ViewportPointToRay(new Vector3(0.5f, 0.55f, 3));
+        var ray = CameraLink.ViewportPointToRay(new Vector3(0.5f, 0.55f, 0));
         Vector3 shotPosition = ray.GetPoint(2.6f);
         Ray shotRay = new Ray(shotPosition, ray.direction);
         RaycastHit hit;

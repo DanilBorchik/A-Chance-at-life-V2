@@ -30,7 +30,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             {
                 if (Input.GetKeyDown(KeyCode.F))
                 {
-                    _Car.BusRecovery(KakoyNamber);
+                    _Car.BusRecovery(KakoyNamber);  
                     _Inventar.ColvoShin -= 1;
                     ColvoShin = _Inventar.ColvoShin;
                     PlayerPrefs.SetInt("ColvoShin", ColvoShin);
@@ -40,16 +40,16 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.F))
                 {
-                    if (_Inventar.ColvoTopliva > 0.3)
+                    if (_Inventar.ColvoTopliva > 0)
                     {
                         _Inventar.ZapravkaMashini();
                         ColvoToplivaMashini += 5f * Time.deltaTime;
                         PlayerPrefs.SetFloat("ColvoToplivaMashini", ColvoToplivaMashini);
+                        _Car.ColvoToplivaMashini = ColvoToplivaMashini;
                     }
                 }
             }
         }
-        _Car.ColvoToplivaMashini = ColvoToplivaMashini;
     }
 
     private void OnTriggerStay(Collider other)
@@ -70,7 +70,7 @@ public class TrigerDlaVzaimodeistvia : MonoBehaviour
             {
                 if (_Inventar.ColvoKanistr != 0)
                 {
-                    if ( _Inventar.ColvoTopliva > 0.3)
+                    if ( _Inventar.ColvoTopliva > 0)
                     {
                         _UIVzaimodeistvia.SetActive(true);
                         _PlayerTrigere = true;

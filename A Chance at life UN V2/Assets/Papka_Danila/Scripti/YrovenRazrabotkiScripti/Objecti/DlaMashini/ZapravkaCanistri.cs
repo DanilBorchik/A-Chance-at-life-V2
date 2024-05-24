@@ -21,7 +21,7 @@ public class ZapravkaCanistri : MonoBehaviour
     private void Start()
     {
         ColvoTopliva = PlayerPrefs.GetFloat("ColvoToplivaInBochke" + Number, ColvoTopliva);
-        if (ColvoTopliva < 0.3f)
+        if (ColvoTopliva < 0.1f)
         {
             gameObject.SetActive(false);
         }
@@ -44,7 +44,7 @@ public class ZapravkaCanistri : MonoBehaviour
         {
             if (_Inventar.ColvoKanistr != 0)
             {
-                if (ColvoTopliva < 0.3)
+                if (ColvoTopliva <= 0)
                 {
                     UIvzaimodeistvieFalse.SetActive(true);
                     UIvzaimodeistvie.SetActive(false);
@@ -62,7 +62,7 @@ public class ZapravkaCanistri : MonoBehaviour
                 {
                     if (_Inventar.ColvoTopliva <= _Inventar.MaxTopliva)
                     {
-                        if (ColvoTopliva > 0.3)
+                        if (ColvoTopliva >= 0)
                         {
                             _Inventar.Napolnenie(5);
                             ColvoTopliva -= 5 * Time.deltaTime;
